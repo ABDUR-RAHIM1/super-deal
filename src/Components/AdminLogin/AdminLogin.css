@@ -1,9 +1,0 @@
-.adminLoginContainer{
-    width: 55%;
-    margin: 70px auto;
-}
-@media screen and (max-width: 768px){
-  .adminLoginContainer{
-      width: 80%;
-  }   
-}

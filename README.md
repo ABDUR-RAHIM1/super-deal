@@ -4,14 +4,17 @@ modified UI =
 
 slider costomize 
 2 / products cart
-3 / login form
-4 / admin dashboard saperet
+3 / login form - done
+4 / admin dashboard saperet routing
 5 / eye catching images
-6 / loading spinner issue
+6 / loading spinner issue - done
 7 / password hasing
 8/ add product filter in products componets aside
 9 / add / edit  / delete products in dashboard
-
+10/ sava login info in localstorage
+11 / add react toastify   - done
+12 / show wqelocme message before submit order
+13 / order detail page
 
 ## api link 
 
