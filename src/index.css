@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+
+  /*  utilities */
+  .button {
+    @apply py-1 px-4 font-normal
+  }
+
+  /*  utilities */
+
+  /*  header start */
+  .headerContainer {
+    @apply  px-5 py-6 bg-[#191D3D] text-white flex items-center justify-between sticky top-0 z-[9999]
+  }
+
+  .search_bar span {
+    @apply text-3xl text-[color:var(--special-color)] cursor-pointer hover:text-[#05B0BD] duration-300
+  }
+
+  .searchInput {
+    @apply w-[300px] h-24 bg-gray-100 border-2 border-[#05B0BD] flex items-center justify-center px-3 rounded-md absolute -bottom-20 left-5 z-[9999]
+  }
+
+  .searchInput input {
+    @apply w-full py-2 px-2 focus:outline-none text-[#05B0BD] border-2 border-[#05B0BD]
+  }
+
+  .cartItem {
+    @apply text-3xl text-[color:var(--special-color)] cursor-pointer relative z-[9999]
+  }
+
+  .cartItem span {
+    @apply text-[15px] absolute -top-5 -left-2 text-white
+  }
+
+  ;
+
+  .navItems ul {
+    @apply flex items-center justify-center gap-10 uppercase text-[16px] font-medium
+  }
+
+  .navItems ul li a {
+    @apply hover:text-[color:var(--special-color)] duration-200
+  }
+
+  .logo {
+    @apply text-4xl border-2 border-[#40f2ff] hover:border-[white] p-2 rounded-md duration-200
+  }
+  .addBanner{
+    @apply hidden px-5 md:flex items-center justify-between py-4 bg-gray-100 text-[#42a7ae]
+  }
+
+  /*  header snd here */
+
+
+  /*    trending produtcs  start */
+    .filterBtn{
+       @apply hover:text-[color:var(--special-color)] cursor-pointer uppercase
+    }
+  /*    trending produtcs  end */
+
+
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --special-color: #40f2ff;
+  }
+
+  /*  menu resposnive */
+  .menuIcon {
+    display: none;
+    font-size: 32px;
+    color: var(--special-color);
+    cursor: pointer;
+  }
+
+  @media screen and (max-width:768px) {
+    .menuIcon {
+      display: block;
+      z-index: 100; 
+    }
+
+    .navItems ul {
+      flex-direction: column; 
+      width: 70%;
+      height:100vh;
+      background-color: #191D3D;
+      position: fixed;
+      top: 0; 
+      transition: 1s all ease;
+      z-index: 99;
+      gap: 5px;
+    }
+    .logo{
+      display: none;
+    }
+  }
+
+  /*  menu resposnive end */
+
+    /* newslatter start  */
+    .newslatter{
+      background-image: url("./images/newslatter.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 500px; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* newslatter end  */
+}

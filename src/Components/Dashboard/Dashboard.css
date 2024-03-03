@@ -1,0 +1,71 @@
+.dashboardContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    background-color: #2a2a48;
+}
+.dashMenu {
+    width: 25%;
+    height: 100vh;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: #1d2840;
+    padding-top: 50px;
+}
+.dashMenu button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.btnIcon{
+    font-size: 20px;
+    margin-right: 10px;
+}
+.dashMenu a{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 20px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+.dashContent{
+    width: 74%;
+    padding:20px;  
+}
+
+@media screen and (max-width: 768px){
+    .dashMenu { 
+        width: 100%;
+        padding: 0px;   
+        padding-top: 30px;  
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .dashMenu button{
+        width: auto;
+    }
+    .btnIcon{
+        color:  crimson;
+    }
+    .dashContent{
+        width: 100%;
+        margin-top: 20px;
+        padding:20px;  
+    }
+}
+

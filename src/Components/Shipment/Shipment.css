@@ -1,0 +1,15 @@
+.shipmentContainer{
+ width: 70%;
+ margin: 50px auto;
+ padding: 20px;
+ font-style: italic;
+ color: white;
+ background-color: black;
+ border-radius: 5px;
+}
+
+@media screen and (max-width: 768px){
+    .shipmentContainer{
+        width: 80%;
+    }
+}

@@ -1,0 +1,16 @@
+.UserLoginContainer{
+    width: 55%;
+    margin: auto;
+    padding: 20px;
+    background-color: aliceblue;
+}
+
+@media screen and (max-width: 768px){
+    .UserLoginContainer{
+        width: 90%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: aliceblue;
+    }
+    
+}

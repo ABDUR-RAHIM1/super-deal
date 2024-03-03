@@ -1,0 +1,48 @@
+.TrendingProductsConatiner{
+    color: black;
+    margin: 50px 0px;
+}
+ 
+.TrendingProductsConatiner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.trendProduct{
+    width: 31%;
+    min-height: 460px;
+    border: 0.5px solid rgb(217, 243, 243);
+    padding: 6px;
+    margin-top: 20px;
+}
+.imgWrapper{
+    width: 100%;
+    min-height: 300px;
+    position: relative;
+}
+.imgWrapper img{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+}
+ 
+.productBg {
+    width: 100%;
+    height: 0%;
+    background-color: #191d3de0;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    transition: 0.3s all ease-in-out;
+}
+.imgWrapper:hover .productBg{
+  
+    height: 100%;
+}
+
+@media screen and (max-width:768px) {
+    .trendProduct{
+        width: 48%;
+    }
+}

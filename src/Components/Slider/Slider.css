@@ -1,0 +1,82 @@
+.sldierWrapper{ 
+    min-height: 500px;
+    background-color: black;
+    z-index: 555;
+    overflow: hidden;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon { 
+    display: none; 
+}
+.sliderTextConatiner{
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+.sliderTextConatiner h2{
+    text-transform: capitalize;
+    font-style: italic;
+    color: white;
+}
+.sliderTextConatiner p {
+    color: #534441;
+    font-weight: 600;
+}
+.sliderImgContainer{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.slliderIImg{
+    width: 100%;
+    margin-top: 20px;
+    height: 470px; 
+    vertical-align: middle;
+}
+.bannerPrice{
+    color: whitesmoke;
+    margin-bottom: 15px;
+}
+/*  bootstrap  class */
+.carousel-indicators {
+    display: none;
+}
+
+/*  resposive css  */
+@media screen and (max-width: 768px){
+    .logo {
+        font-style: italic;
+        color: crimson;
+        font-size: 22px;
+        
+    }
+    
+    .sldierWrapper{ 
+       height: 500px;
+        background-color: #000;
+    }
+    .sliderTextConatiner {
+        padding: 0pc 15px;
+        margin: 20px 0px;
+        text-align: center;
+        align-items: center;
+        padding-left: 0px;
+    }
+    .slliderIImg {
+        width: 57%;
+        margin-top: 20px;
+        height: 950px;
+    }
+
+    /*  [product catrgories card */
+    .shoesCard {
+        width: 100%;
+        margin-bottom: 20px;
+        box-shadow: -3px 10px 377px -6px rgba(0,0,0,0.5);
+        -webkit-box-shadow: -3px 10px 377px -6px rgba(0,0,0,0.5);
+        -moz-box-shadow: -3px 10px 377px -6px rgba(0,0,0,0.5);
+    }
+}
