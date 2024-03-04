@@ -2,19 +2,20 @@
 
 modified UI = 
 
-slider costomize 
-2 / products cart
+2 / products card - done
 3 / login form - done
+6 / loading spinner issue - done 
+8/ add product filter in products componets aside  -   done
+11 / add react toastify   - done
+13 / order detail page - done
+10/ save login info in localstorage   -- done
+
+slider costomize 
 4 / admin dashboard saperet routing
 5 / eye catching images
-6 / loading spinner issue - done
 7 / password hasing
-8/ add product filter in products componets aside
 9 / add / edit  / delete products in dashboard
-10/ sava login info in localstorage
-11 / add react toastify   - done
-12 / show wqelocme message before submit order
-13 / order detail page
+12 / show welecome message before submit order
 
 ## api link 
 

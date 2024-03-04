@@ -11,14 +11,12 @@
 }
 .trendProduct{
     width: 31%;
-    min-height: 460px;
     border: 0.5px solid rgb(217, 243, 243);
     padding: 6px;
     margin-top: 20px;
 }
 .imgWrapper{
-    width: 100%;
-    min-height: 300px;
+    width: 100%; 
     position: relative;
 }
 .imgWrapper img{

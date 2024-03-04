@@ -1,126 +1,152 @@
-import Form from 'react-bootstrap/Form';
-import { useState } from "react";
+import Form from "react-bootstrap/Form";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { loginContext } from "../../App"; 
+import { loginContext } from "../../App";
 import { toast } from "react-toastify";
 
 function UsersLogin() {
-    const [isLoading, setIsLoading] = useState(false)
-    const [isLogin, setIsLogin] = useContext(loginContext)
-    const navigate = useNavigate(); 
-    const [click, setClick] = useState(true)
+  const [isLoading, setIsLoading] = useState(false);
+  const [isLogin, setIsLogin] = useContext(loginContext);
+  const navigate = useNavigate();
+  const [click, setClick] = useState(true);
 
-    const [createUsers, setCreateUsers] = useState({
-        username: "",
-        email: "",
-        password: "",
+  const [createUsers, setCreateUsers] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setCreateUsers({ ...createUsers, [e.target.name]: e.target.value });
+  };
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    fetch("https://panda-backend.onrender.com/users/register", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+      body: JSON.stringify(createUsers),
     })
- 
+      .then((res) => res.json())
+      .then((data) => {
+        setIsLoading(false);
+        toast(data.message);
+      });
+  };
 
-    const handleChange = (e) => {
-        setCreateUsers({ ...createUsers, [e.target.name]: e.target.value })
+  //  handl login
+  const handleLogin = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    fetch("https://panda-backend.onrender.com/users/login", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(createUsers),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setIsLoading(false);
+        toast(data.message);
+        setIsLogin(true);
+        if (data.message === "logged In successfully") {
+          console.log(data);
+          localStorage.setItem("userLogin", JSON.stringify(true));
+
+          setTimeout(() => {
+            navigate("/shipment");
+          }, 1500);
+        }
+      });
+  };
+
+  //    redicrect while user already login
+
+  useEffect(() => {
+    const userLogin = localStorage.getItem("userLogin");
+    if (userLogin) {
+      navigate("/shipment");
     }
+  }, []);
 
-    const handleRegister = (e) => {
-        e.preventDefault()
-        setIsLoading(true)
-        fetch('https://panda-backend.onrender.com/users/register', {
-            method: "POST",
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-            body: JSON.stringify(createUsers)
-        })
-            .then(res => res.json())
-            .then(data => {
-                setIsLoading(false)
-                toast(data.message)
-            })
-    }
+  return (
+    <div className="UserLoginContainer ">
+      <div>
+        <Form
+          className="loginForm"
+          onSubmit={click ? handleLogin : handleRegister}
+        >
+          <h2 className="text-center my-4 text-4xl font-medium text-[color:var(--special-color)]">
+            {click ? "Login" : "Register"}
+          </h2>
+          {click ? (
+            <p className=" text-center my-3">
+              Don't have An account ?{" "}
+              <span
+                onClick={() => setClick(!click)}
+                className="text-orange-500 font-medium cursor-pointer"
+              >
+                Create an account
+              </span>
+            </p>
+          ) : (
+            <p className=" text-center my-3">
+              I have Already an account ?{" "}
+              <span
+                onClick={() => setClick(!click)}
+                className="text-orange-500 font-medium cursor-pointer"
+              >
+                Login Now
+              </span>
+            </p>
+          )}
 
-    //  handl login 
-    const handleLogin = (e) => {
-        e.preventDefault()
-        setIsLoading(true)
+          {!click && (
+            <input
+              className="formInput"
+              type="text"
+              onChange={handleChange}
+              required
+              placeholder="Enter Username"
+              name="username"
+            />
+          )}
 
-        fetch('https://panda-backend.onrender.com/users/login', {
-            method: "POST",
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify(createUsers)
-        }).then(res => res.json())
-            .then(data => {
-                setIsLoading(false)
-                toast(data.message)
-                setIsLogin(true)
-                if (data.message === 'logged In successfully') {
-                    setTimeout(() => {
-                        navigate("/shipment")
-                    }, 1500);
-                }
-            })
-    }
+          <input
+            className="formInput"
+            type="email"
+            onChange={handleChange}
+            required
+            placeholder="Enter email"
+            name="email"
+          />
 
-    return (
-        <div className="UserLoginContainer ">
-            <div >
-                <Form className="loginForm" onSubmit={click ? handleLogin : handleRegister}>
+          <input
+            className="formInput"
+            type="password"
+            onChange={handleChange}
+            required
+            placeholder="Password"
+            name="password"
+          />
 
-                    <h2 className="text-center my-4 text-4xl font-medium text-[color:var(--special-color)]">
-                        {
-                            click ? "Login" : "Register"
-                        }
-                    </h2>
-                    {
-                        click ?
-                            <p className=" text-center my-3">
-                                Don't have An account ? <span onClick={() => setClick(!click)} className="text-orange-500 font-medium cursor-pointer">Create an account</span>
-                            </p>
-                            :
-                            <p className=" text-center my-3">
-                                I have Already an account ? <span onClick={() => setClick(!click)} className="text-orange-500 font-medium cursor-pointer">Login Now</span>
-                            </p>
-
-                    }
-               
-                 {  !click &&
-                  <input className="formInput"
-                        type="text"
-                        onChange={handleChange}
-                        required
-                        placeholder="Enter Username"
-                        name="username"
-                    />}
-                
-                    <input className="formInput"
-                        type="email"
-                        onChange={handleChange}
-                        required
-                        placeholder="Enter email"
-                        name="email"
-                    />
-         
-
-                    <input className="formInput"
-                        type="password"
-                        onChange={handleChange}
-                        required
-                        placeholder="Password"
-                        name="password"
-                    />
-
-                    <button className="button px-4 py-2 text-black bg-[color:var(--special-color)]" type="submit">
-                  {
-                     isLoading ? "Checking" :  click ? "LOGIN" :  "REGISTER"
-                  }
-                    </button>
-                </Form>
-            </div>)
-
-        </div>
-    );
+          <button
+            className="button px-4 py-2 text-black bg-[color:var(--special-color)]"
+            type="submit"
+          >
+            {isLoading ? "Checking" : click ? "LOGIN" : "REGISTER"}
+          </button>
+        </Form>
+      </div>
+      )
+    </div>
+  );
 }
 
 export default UsersLogin;

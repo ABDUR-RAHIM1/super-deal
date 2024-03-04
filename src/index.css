@@ -69,6 +69,12 @@
     @apply w-full h-[190px] hover:scale-125 duration-200;
   }
 
+  .productFilterArea{
+    @apply px-5 py-5 flex items-center justify-center gap-3 flex-wrap my-3
+  }
+ .productFilterArea button{
+  @apply uppercase font-medium
+ }
   .cardBtn,
   .cardLink {
     @apply button bg-gray-200 flex items-center justify-between gap-2 shadow-md hover:bg-gray-300;
@@ -178,9 +184,42 @@
   }
 
   /*  admin login end */
+
+  /*  dashboard start */
+  .adminSidebar{
+    @apply w-[300px] h-screen overflow-y-scroll scroll-m-[24rem] bg-gradient-to-r from-gray-400 to-gray-200  text-white px-5
+  }
+  .adminSidebar ul{
+    @apply my-10 flex flex-col gap-4
+  }
+  .adminSidebar ul li{
+    @apply uppercase bg-gray-100 py-2 text-center text-black font-medium
+  }
+  /*  dashboard end */
 }
 
 @layer base {
+  /* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(184, 182, 182);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
   * {
     margin: 0;
     padding: 0;

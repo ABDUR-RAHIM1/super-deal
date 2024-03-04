@@ -15,7 +15,7 @@ function Products() {
 
   return (
     <div className='my-20 px-4'>
-      <div className="flex items-center justify-between ">
+      <div className="flex items-center justify-between flex-wrap ">
         <div className='w-auto'>
           <h2 className='text-3xl font-medium'>NEW ARRIVALS</h2>
           <div className='flex items-center justify-center gap-2'>
@@ -23,7 +23,7 @@ function Products() {
             <p>Check our new today!</p>
           </div>
         </div>
-        <div className="flex items-center justify-center gap-4 font-medium ">
+        <div className="flex items-center justify-center flex-wrap my-3 md:my-0 gap-4 font-medium overflow-auto">
           {
             buttons.map((btn, i) => (
               <button onClick={handleClickBtn} key={i} className='filterBtn'>

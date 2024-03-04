@@ -16,6 +16,7 @@ import UsersLogin from './Components/UsersLogin/UsersLogin';
 import Home from './Pages/Home' 
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import Admin from './Components/Dashboard/Admin';
 
 
 export const CartContext = createContext();
@@ -37,6 +38,7 @@ function App() {
                         <ToastContainer/>
                         <Routes>
                             <Route path="/" element={<Home />} />
+                            <Route path="/admin" element={<Admin />} />
                             <Route path="/dashboard" element={<AdminProtected>
                                 <Dashboard />
                             </AdminProtected>} />

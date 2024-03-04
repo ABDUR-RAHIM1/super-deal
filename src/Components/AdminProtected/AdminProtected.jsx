@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
-import { Navigate } from 'react-router-dom'
-import { adminContext } from '../../App'
+import React  from 'react'
+import { Navigate } from 'react-router-dom' 
 
 function AdminProtected({children}) {
-    const [isAdminLogin] = useContext(adminContext)
+  const isAdminLogin = localStorage.getItem("adminLogin");
   return  isAdminLogin ? children : <Navigate to="/admin-login"/>
 }
 
