@@ -1,19 +1,19 @@
 import React from 'react'
-import "./CartItems.css"
-import img from "../../images/banner-images/s1.png"
+import dummyImg from "../../images/demo.png"
 function CartItems(props) {
-    const { title, desc, price, _id } = props.cart;
+    const { title, desc, image , price, _id , categorie } = props.cart;
  
     return (
-        <div className='cartItems'>
+        <div className='flex items-center justify-start gap-3 my-5 bg-gray-50 border-b border-gray-200'>
             <div className="cartImg">
-                <img src={img} alt="" />
+                <img src={image || dummyImg} alt="" />
             </div>
             <div className="cartText">
-                <h4>{title}</h4>
-                <h6>Price : {price} ৳</h6>
+                <h4 className='text-2xl my-2'>{title}</h4>
+                <h6 className='font-medium my-2'>Price : {price} BDT</h6>
+                <p className='my-3'>Categories : {categorie}</p>
                 <p>{desc.slice(0,100) + " . . ."}</p>
-                <button onClick={()=>props.handleRemove(_id)} className='btn btn-sm btn-danger fw-bold'>Remove items</button>
+                <button onClick={()=>props.handleRemove(_id)} className='button bg-red-500 py-2 text-white my-3 font-medium hover:bg-red-600 duration-200'>Remove items</button>
             </div>
         </div>
     )

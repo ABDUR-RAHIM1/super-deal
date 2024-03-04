@@ -44,7 +44,7 @@ function App() {
                             <Route path="/cart" element={<Cart />} />
                             <Route path="/login" element={<UsersLogin />} />
                             <Route path="/admin-login" element={<AdminLogin />} />
-                            <Route path="/details/:id" element={<Details />} />
+                            <Route path="/details" element={<Details />} />
                             <Route path="/orderDetails/:id" element={<OrderDetails />} />
                             <Route path="/shipment" element={<ProtectedRoute>
                                 <Shipment />

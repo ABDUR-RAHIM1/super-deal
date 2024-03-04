@@ -1,13 +1,9 @@
-import Spinner from 'react-bootstrap/Spinner';
-import './Spinner.css'
 
 function Loading() {
 
     return (
-        <div className='spinnerContainer'>
-            <Spinner animation="border text-danger" role="status" >
-                <span className="visually-hidden ">Loading...</span>
-            </Spinner>
+        <div className='flex items-center justify-center min-h-screen w-full'>
+                <span className="text-lg italic">Loading...</span>
         </div>
 
     );

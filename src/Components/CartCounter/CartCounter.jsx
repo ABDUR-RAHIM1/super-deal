@@ -1,6 +1,5 @@
 import React from 'react' 
-import { Link } from 'react-router-dom'; 
-import "./CartCounter.css"
+import { Link } from 'react-router-dom';  
 
 function CartCounter(props) {
     const { cart } = props; 
@@ -23,14 +22,14 @@ function CartCounter(props) {
 
     return (
         <div className='cartCounter'>
-            <h4>Selected Items : {cart.length}</h4>
-            <p>Product Price : {totalPrice} ৳</p>
-            <p>Shiping Cost : {shipping} ৳</p>
-            <p>Total Price : {totalPrice + shipping} ৳</p>
+            <h4 className='text-2xl my-3'>Selected Items : {cart.length}</h4>
+            <p className='text-red-500 my-2 text-xl'>Products Price : {totalPrice} BDT</p>
+            <p className='ny-2 text-xl'>Shipping Cost : {shipping} BDT</p>
+            <p className='text-red-500 my-2 text-xl'>Total Price : {totalPrice + shipping} BDT</p>
             {cart.length <= 0 ?
                 <button className='btn btn-danger w-100 mt-3' disabled>Cart is Empty</button> :
                 <Link to="/shipment">
-                    <button className='btn btn-warning w-100 mt-3'>Order Now</button>
+                    <button className='button py-2 w-full bg-blue-500 my-4 text-white font-medium'>Order Now</button>
                 </Link>
             }
         </div>

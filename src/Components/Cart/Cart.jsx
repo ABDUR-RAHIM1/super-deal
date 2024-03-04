@@ -5,7 +5,6 @@ import CartItems from '../CartItems/CartItems'
 import './Cart.css'
 function Cart() {
     const [cart, setCart] = useContext(CartContext)
-    // ...
 
     const handleRemove = (id) => { 
         const index = cart.findIndex((item) => item._id === id);
@@ -18,7 +17,7 @@ function Cart() {
  
 
     return (
-        <div className='cart container mt-4'>
+        <div className='cart  px-3 min-h-[400px] bg-gray-100 py-10'>
             <div className="row">
                 <div className="col-md-8">
                     <div className="cartItemContainer">

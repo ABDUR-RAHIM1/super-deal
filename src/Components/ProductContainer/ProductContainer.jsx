@@ -4,6 +4,7 @@ import { useState } from 'react'
 import ProductList from '../ProductList/ProductList'
 import Loading from '../Spinner/Spinner'
 
+//  chaild of ProductCOntainer Component
 function ProductContainer() {
   const [loading, setLoading] = useState(true)
   const [product, setProduct] = useState([])
@@ -20,18 +21,14 @@ function ProductContainer() {
     return <Loading />
   }
   return (
-    <div className='container my-2'>
-      <div className="row">
+    <div className='px-2 bg-gray-200 flex items-center justify-between flex-wrap py-10'> 
         {
           product.map(pd => {
-            return (
-              <div className="col-md-4" key={pd._id}>
-                <ProductList product={pd} />
-              </div>
+            return ( 
+                <ProductList  key={pd._id} product={pd} /> 
             )
           })
-        }
-      </div>
+        } 
     </div>
   )
 }

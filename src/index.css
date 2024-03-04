@@ -2,131 +2,182 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
-
   /*  utilities */
   .button {
-    @apply py-1 px-4 font-normal
+    @apply py-1 px-4 font-normal;
   }
 
   /*  utilities */
 
   /*  header start */
   .headerContainer {
-    @apply px-5 py-6 bg-[#191D3D] text-white flex items-center justify-between sticky top-0 z-[9999]
+    @apply px-5 py-6 bg-[#191D3D] text-white flex items-center justify-between sticky top-0 z-[9999];
   }
 
   .search_bar span {
-    @apply text-3xl text-[color:var(--special-color)] cursor-pointer hover:text-[#05B0BD] duration-300
+    @apply text-3xl text-[color:var(--special-color)] cursor-pointer hover:text-[#05B0BD] duration-300;
   }
 
   .searchInput {
-    @apply w-[300px] h-24 bg-gray-100 border-2 border-[#05B0BD] flex items-center justify-center px-3 rounded-md absolute -bottom-20 left-5 z-[9999]
+    @apply w-[300px] h-24 bg-gray-100 border-2 border-[#05B0BD] flex items-center justify-center px-3 rounded-md absolute -bottom-20 left-5 z-[9999];
   }
 
   .searchInput input {
-    @apply w-full py-2 px-2 focus:outline-none text-[#05B0BD] border-2 border-[#05B0BD]
+    @apply w-full py-2 px-2 focus:outline-none text-[#05B0BD] border-2 border-[#05B0BD];
   }
 
   .cartItem {
-    @apply text-3xl text-[color:var(--special-color)] cursor-pointer relative z-[9999]
+    @apply text-3xl text-[color:var(--special-color)] cursor-pointer relative z-[9999];
   }
 
   .cartItem span {
-    @apply text-[15px] absolute -top-5 -left-2 text-white
+    @apply text-[15px] absolute -top-5 -left-2 text-white;
   }
 
-  ;
-
   .navItems ul {
-    @apply flex items-center justify-center gap-10 uppercase text-[16px] font-medium
+    @apply flex items-center justify-center gap-10 uppercase text-[16px] font-medium;
   }
 
   .navItems ul li a {
-    @apply hover:text-[color:var(--special-color)] duration-200
+    @apply hover:text-[color:var(--special-color)] duration-200;
   }
 
   .logo {
-    @apply text-4xl border-2 border-[#40f2ff] hover:border-[white] p-2 rounded-md duration-200
+    @apply text-4xl border-2 border-[#40f2ff] hover:border-[white] p-2 rounded-md duration-200;
   }
 
   .addBanner {
-    @apply hidden px-5 md:flex items-center justify-between py-4 bg-gray-100 text-[#42a7ae]
+    @apply hidden px-5 md:flex items-center justify-between py-4 bg-gray-100 text-[#42a7ae];
   }
 
   /*  header snd here */
 
-
   /*    trending produtcs  start */
   .filterBtn {
-    @apply hover:text-[color:var(--special-color)] cursor-pointer uppercase
+    @apply hover:text-[color:var(--special-color)] cursor-pointer uppercase;
   }
 
   /*    trending produtcs  end */
 
+  /*  product card start */
+  .productCard {
+    @apply w-[48%] sm:w-[32%] md:w-[23%] lg:w-[19%] min-h-[250px] bg-gray-100 my-4;
+  }
+
+  .productCard img {
+    @apply w-full h-[190px] hover:scale-125 duration-200;
+  }
+
+  .cardBtn,
+  .cardLink {
+    @apply button bg-gray-200 flex items-center justify-between gap-2 shadow-md hover:bg-gray-300;
+  }
+
+  .addCartIcon {
+    @apply text-2xl;
+  }
+
+  /*  product card end */
+
+  /*  products details start  */
+  .productDetails {
+    @apply px-5 min-h-screen py-10 bg-gray-200 flex justify-between;
+  }
+  .detailsContainer {
+    @apply w-[75%];
+  }
+  .details {
+    @apply pr-3 flex items-start justify-between border-r border-gray-400;
+  }
+  .details img {
+    @apply w-auto min-w-full max-h-[400px]  overflow-auto;
+  }
+  .details .text {
+    @apply w-[55%];
+  }
+  .sidebar {
+    @apply w-[22%];
+  }
+
+  .reletedProductContainer{
+    @apply my-20
+  }
+  /*  products details end  */
+
+  /*  cart Items start */
+   
+    .cartImg{
+      @apply w-[30%]
+    }
+    .cartText{
+      @apply w-[68%]
+    }
+  /*  cart Items send */
+
   /* footer start  */
   .footer {
-    @apply px-5 py-20 flex items-start justify-between flex-wrap bg-slate-900 text-white
+    @apply px-5 py-20 flex items-start justify-between flex-wrap bg-slate-900 text-white;
   }
 
   .footer-title {
-    @apply text-3xl italic mb-7 uppercase text-[color:var(--special-color)]
+    @apply text-3xl italic mb-7 uppercase text-[color:var(--special-color)];
   }
 
   .footer-col {
-    @apply w-full sm:w-[48%] md:w-[23%] my-3
+    @apply w-full sm:w-[48%] md:w-[23%] my-3;
   }
 
   .footer-col ul li {
-    @apply mb-4 uppercase font-medium cursor-pointer hover:text-[color:var(--special-color)] duration-300
+    @apply mb-4 uppercase font-medium cursor-pointer hover:text-[color:var(--special-color)] duration-300;
   }
 
   .fIcon {
-    @apply text-3xl cursor-pointer text-[color:var(--special-color)] hover:text-white duration-300
+    @apply text-3xl cursor-pointer text-[color:var(--special-color)] hover:text-white duration-300;
   }
 
   .pyIcon {
-    @apply text-6xl text-[color:var(--special-color)]
+    @apply text-6xl text-[color:var(--special-color)];
   }
 
   /* footer end  */
 
-
   /*  user login form start */
-  .UserLoginContainer{
-    @apply w-full min-h-[700px] p-5 border border-[color:var(--special-color)]
+  .UserLoginContainer {
+    @apply w-full min-h-[700px] p-5 border border-[color:var(--special-color)];
   }
+
   .loginForm {
-    @apply w-[50%] m-auto border border-[color:var(--special-color)] py-5 px-7
+    @apply w-[50%] m-auto border border-[color:var(--special-color)] py-5 px-7;
   }
- 
-   .formInput{
-    @apply w-full py-2 px-2 focus:outline-none border my-2 border-[color:var(--special-color)]
-   }
+
+  .formInput {
+    @apply w-full py-2 px-2 focus:outline-none border my-2 border-[color:var(--special-color)];
+  }
 
   /*  user login form end */
 
   /*  shipment start */
-    .shipmentContainer{
-      @apply bg-gray-100 w-full min-h-screen py-10 px-5
-    }
-    .shipmentContainer form{
-      @apply w-full md:w-[70%] m-auto bg-gray-50 px-4 py-6 border border-[color:var(--special-color)]
-    }
+  .shipmentContainer {
+    @apply bg-gray-100 w-full min-h-screen py-10 px-5;
+  }
+
+  .shipmentContainer form {
+    @apply w-full md:w-[70%] m-auto bg-gray-50 px-4 py-6 border border-[color:var(--special-color)];
+  }
+
   /*  shipment end */
 
   /*  admin login start */
-  .adminLoginContainer{
-     @apply  bg-gray-100 w-full min-h-screen py-10 px-5
+  .adminLoginContainer {
+    @apply bg-gray-100 w-full min-h-screen py-10 px-5;
   }
-  .adminLoginContainer form{
-    @apply w-full md:w-[50%] m-auto bg-gray-50 px-4 py-6 border border-[color:var(--special-color)]
+
+  .adminLoginContainer form {
+    @apply w-full md:w-[50%] m-auto bg-gray-50 px-4 py-6 border border-[color:var(--special-color)];
   }
+
   /*  admin login end */
-  
-
-
 }
 
 @layer base {
@@ -148,7 +199,7 @@
     cursor: pointer;
   }
 
-  @media screen and (max-width:768px) {
+  @media screen and (max-width: 768px) {
     .menuIcon {
       display: block;
       z-index: 100;
@@ -158,7 +209,7 @@
       flex-direction: column;
       width: 70%;
       height: 100vh;
-      background-color: #191D3D;
+      background-color: #191d3d;
       position: fixed;
       top: 0;
       transition: 1s all ease;
