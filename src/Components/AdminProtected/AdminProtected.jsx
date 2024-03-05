@@ -1,9 +1,9 @@
 import React  from 'react'
-import { Navigate } from 'react-router-dom' 
+import { Navigate, Outlet } from 'react-router-dom' 
 
-function AdminProtected({children}) {
+function AdminProtected() {
   const isAdminLogin = localStorage.getItem("adminLogin");
-  return  isAdminLogin ? children : <Navigate to="/admin-login"/>
+  return  isAdminLogin ? <Outlet/> : <Navigate to="/admin-login"/>
 }
 
 export default AdminProtected

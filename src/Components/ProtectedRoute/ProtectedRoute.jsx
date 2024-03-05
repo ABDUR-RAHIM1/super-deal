@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { Navigate } from 'react-router-dom'; 
+import { Navigate, Outlet } from 'react-router-dom'; 
 
-function ProtectedRoute({ children }) { 
+function ProtectedRoute( ) { 
    const isUserLogin = localStorage.getItem("userLogin");
-  return isUserLogin ? children : <Navigate to="/login" />;
+  return isUserLogin ? <Outlet/> : <Navigate to="/login" />;
 }
 
 export default ProtectedRoute;

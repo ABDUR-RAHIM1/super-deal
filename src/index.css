@@ -187,13 +187,19 @@
 
   /*  dashboard start */
   .adminSidebar{
-    @apply w-[300px] h-screen overflow-y-scroll scroll-m-[24rem] bg-gradient-to-r from-gray-400 to-gray-200  text-white px-5
+    @apply w-[300px] h-screen overflow-y-scroll scroll-m-[24rem] bg-gradient-to-r from-[#191d3d] to-[black]  text-white px-5
   }
   .adminSidebar ul{
     @apply my-10 flex flex-col gap-4
   }
   .adminSidebar ul li{
-    @apply uppercase bg-gray-100 py-2 text-center text-black font-medium
+    @apply uppercase  bg-[#282a2f] py-2 text-center text-[#fffcfc] font-medium
+  }
+  .adminSidebar ul li a{
+    @apply text-center flex justify-center items-center gap-2 
+  }
+  .adminSidebar svg{
+     @apply text-2xl text-[color:var(--special-color)]
   }
   /*  dashboard end */
 }

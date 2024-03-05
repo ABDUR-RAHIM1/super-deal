@@ -1,12 +1,12 @@
 import React from 'react' 
-import { useState } from 'react'; 
-import Addpost from '../Addpost/Addpost';
-import DashboardContent from '../DashboardContent/DashboardContent';
+import { useState } from 'react';  
+import DashboardContent from './DashboardContent/DashboardContent';
 import Users from "../Users/Users" 
 import {AiOutlineHome , AiOutlinePlus, AiOutlineBorderInner} from "react-icons/ai"
 import {FcBusinessman} from "react-icons/fc"
 import "./Dashboard.css"
 import Order from '../Order/Order';
+import AddProduct from './Addpost/AddProduct';
 
 function Dashboard() {
   const [component, setComponent] = useState(<DashboardContent />)
@@ -15,7 +15,7 @@ function Dashboard() {
     if (btnText === "HOME") {
       setComponent(<DashboardContent />)
     } else if (btnText === "POST") {
-      setComponent(<Addpost />)
+      setComponent(<AddProduct />)
     } else if (btnText === "USERS") {
       setComponent(<Users />)
     } else if (btnText === "ORDERS") {

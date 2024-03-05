@@ -55,13 +55,7 @@ function Navbar() {
             <li>
               <Link className='navItems' to="/login">Sign up</Link>
             </li>
-            <li>
-              <div className="adminLogin">
-                <Link to="/admin-login">
-                  <AiOutlineUserAdd className="adminIcon" />
-                </Link>
-              </div>
-            </li>
+           
           </ul>
         </nav>
 

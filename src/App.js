@@ -13,10 +13,12 @@ import ProductContainer from './Components/ProductContainer/ProductContainer';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 import Shipment from './Components/Shipment/Shipment';
 import UsersLogin from './Components/UsersLogin/UsersLogin';
-import Home from './Pages/Home' 
+import Home from './Pages/Home'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import Admin from './Components/Dashboard/Admin';
+import DashboardContent from './Components/Dashboard/DashboardContent/DashboardContent';
+import AddProduct from './Components/Dashboard/Addpost/AddProduct';
 
 
 export const CartContext = createContext();
@@ -35,24 +37,30 @@ function App() {
                 <CartContext.Provider value={[cart, setCart]}>
                     <BrowserRouter>
                         <Header />
-                        <ToastContainer/>
+                        <ToastContainer />
                         <Routes>
                             <Route path="/" element={<Home />} />
-                            <Route path="/admin" element={<Admin />} />
-                            <Route path="/dashboard" element={<AdminProtected>
-                                <Dashboard />
-                            </AdminProtected>} />
+
+                            {/*  admin protected */}
+                            <Route element={<AdminProtected />}>
+                                <Route path='/admin2' element={<Dashboard />} />
+                                <Route path="/admin-dashboard" element={<DashboardContent />} />
+                               <Route path='/addproduct' element={<AddProduct/>} />
+                            </Route>
+                            {/*  admin protected routes  end*/}
                             <Route path="/allProducts" element={<ProductContainer />} />
                             <Route path="/cart" element={<Cart />} />
                             <Route path="/login" element={<UsersLogin />} />
                             <Route path="/admin-login" element={<AdminLogin />} />
                             <Route path="/details" element={<Details />} />
                             <Route path="/orderDetails/:id" element={<OrderDetails />} />
-                            <Route path="/shipment" element={<ProtectedRoute>
-                                <Shipment />
-                            </ProtectedRoute>} />
+                            {/*  shipment protected */}
+                            <Route element={<ProtectedRoute />}>
+                                <Route path='/shipment' element={<Shipment />} />
+                            </Route>
+
                             <Route path="/*" element={<ErrorPage />} />
-                        </Routes> 
+                        </Routes>
                         <Footer />
                     </BrowserRouter>
                 </CartContext.Provider>
