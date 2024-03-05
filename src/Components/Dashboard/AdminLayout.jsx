@@ -6,14 +6,14 @@ import { MdFavoriteBorder , MdOutlineManageSearch } from "react-icons/md";
 
 function AdminLayout({ children }) {
   return (
-    <div className="text-red-500 flex ">
+    <div className="flex ">
       <div className="adminSidebar">
         <ul>
           <li>  <Link to={"/admin-dashboard"}> <FaHome/> Dashboard</Link></li>
           <li>  <Link to={"/addproduct"}> <IoIosAdd /> Add Product</Link></li>
-          <li> <Link> <IoIosMan/> Users</Link></li>
-          <li>  <Link> <MdOutlineManageSearch /> Manage Products</Link></li>
-          <li> <Link> <MdFavoriteBorder/> orders</Link></li>
+          <li> <Link to={"/manage-users"}> <IoIosMan/> Users</Link></li>
+          <li>  <Link to={"/manage-products"}> <MdOutlineManageSearch /> Manage Products</Link></li>
+          <li> <Link to={"/manage-orders"}> <MdFavoriteBorder/> orders</Link></li>
         </ul>
 
         <div style={{height:"1000px"}}></div>

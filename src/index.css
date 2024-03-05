@@ -202,6 +202,48 @@
      @apply text-2xl text-[color:var(--special-color)]
   }
   /*  dashboard end */
+
+  /*  invoice / order sheet start */
+
+    .invoiceContainer{
+       @apply px-5 py-10 min-h-screen bg-gray-100
+    }
+    .invoiceHeader{
+      @apply  py-3 flex items-center justify-between border-t-[30px] border-blue-900
+    }
+    .invoiceHeader h2{
+       @apply text-3xl font-medium uppercase text-blue-900
+    }
+    .invoiceHeader p{
+      @apply text-sm italic 
+    }
+
+    .invoiceAddress{
+      @apply my-3 flex items-center justify-between flex-wrap border-b border-blue-500
+    }
+    .invoiceAddress h2{
+      @apply bg-blue-900 p-1 my-3 text-white text-2xl uppercase italic font-medium
+    }
+    .invoiceAddress p{
+      @apply my-3 font-medium capitalize text-blue-900
+    }
+    .orderInfo , .costomerInfo{
+      @apply my-5 overflow-x-auto
+    }
+    .paymentArea{
+      @apply flex items-start justify-between flex-wrap
+    }
+.paymentArea h2{
+  @apply bg-blue-900 text-white py-1 px-2 text-lg font-medium my-3
+}
+.paymentArea p{
+  @apply text-xl font-normal my-2 text-blue-900
+}
+.invoiceFooter{
+  @apply bg-blue-200 py-10 px-2 my-4
+}
+  /*  invoice / order sheet snd */
+
 }
 
 @layer base {
@@ -226,6 +268,14 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.table>:not(caption)>*>* {
+  padding: .5rem .5rem; 
+  background-color: transparent;
+   
+  
+}
+
   * {
     margin: 0;
     padding: 0;

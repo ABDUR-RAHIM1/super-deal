@@ -9,12 +9,13 @@ modified UI =
 11 / add react toastify   - done
 13 / order detail page - done
 10/ save login info in localstorage   -- done
+4 / admin dashboard saperet routing  - done
+9 / add / delete products in dashboard  -done
 
 slider costomize 
-4 / admin dashboard saperet routing
 5 / eye catching images
 7 / password hasing
-9 / add / edit  / delete products in dashboard
+12 /  edit /  products in dashboard
 12 / show welecome message before submit order
 
 ## api link 

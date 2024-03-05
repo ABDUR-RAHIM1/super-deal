@@ -2,13 +2,11 @@ import React, { createContext, useState } from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AdminLogin from './Components/AdminLogin/AdminLogin';
 import AdminProtected from './Components/AdminProtected/AdminProtected';
-import Cart from './Components/Cart/Cart';
-import Dashboard from './Components/Dashboard/Dashboard';
+import Cart from './Components/Cart/Cart'; 
 import Details from './Components/Details/Details';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Navbar/Navbar';
-import OrderDetails from './Components/OrderDetails/OrderDetails';
 import ProductContainer from './Components/ProductContainer/ProductContainer';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 import Shipment from './Components/Shipment/Shipment';
@@ -19,6 +17,10 @@ import { ToastContainer } from 'react-toastify';
 import Admin from './Components/Dashboard/Admin';
 import DashboardContent from './Components/Dashboard/DashboardContent/DashboardContent';
 import AddProduct from './Components/Dashboard/Addpost/AddProduct';
+import Users from './Components/Dashboard/Users/Users';
+import ManageProducts from './Components/Dashboard/ManageProducts/ManageProducts';
+import Order from './Components/Dashboard/Order/Order';
+import OrderDetails from './Components/Dashboard/OrderDetails/OrderDetails';
 
 
 export const CartContext = createContext();
@@ -42,10 +44,12 @@ function App() {
                             <Route path="/" element={<Home />} />
 
                             {/*  admin protected */}
-                            <Route element={<AdminProtected />}>
-                                <Route path='/admin2' element={<Dashboard />} />
+                            <Route element={<AdminProtected />}> 
                                 <Route path="/admin-dashboard" element={<DashboardContent />} />
-                               <Route path='/addproduct' element={<AddProduct/>} />
+                                <Route path='/addproduct' element={<AddProduct />} />
+                                <Route path='/manage-users' element={<Users />} />
+                                <Route path='/manage-products' element={<ManageProducts />} />
+                                <Route path='/manage-orders' element={<Order />} />
                             </Route>
                             {/*  admin protected routes  end*/}
                             <Route path="/allProducts" element={<ProductContainer />} />

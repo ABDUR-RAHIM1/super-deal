@@ -5,10 +5,10 @@ import { AiOutlineMenuUnfold, AiOutlineUserAdd } from "react-icons/ai";
 import { IoClose } from "react-icons/io5";
 import { adminContext, CartContext } from '../../App';
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Navbar() {
-
+  const location = useLocation().pathname
   const [cart] = useContext(CartContext);
   const [isAdminLogin] = useContext(adminContext)
 
@@ -76,7 +76,9 @@ function Navbar() {
         </div>
       </header>
 
-      <div className="addBanner">
+  { 
+    location === "/allProducts" &&
+  <div className="addBanner">
         <h5>NO LIMITED</h5>
         <h5> Worldwide free shipping</h5>
         <h5>MONEY BACK</h5>
@@ -84,7 +86,7 @@ function Navbar() {
         <h5>SAFETY</h5>
         <h5> We never share your individual info</h5>
       </div>
-
+}
     </>
   )
 }
