@@ -46,7 +46,7 @@ function ProductContainer() {
                 <button
                 onClick={handleFilterClick}
                   key={pd.categorie}
-                  className="button bg-gray-100 p-2 mx-2"
+                  className="button gradColor p-2 px-2"
                 >
                   {pd.categorie}
                 </button>

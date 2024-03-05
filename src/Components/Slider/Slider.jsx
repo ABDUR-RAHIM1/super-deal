@@ -20,7 +20,7 @@ function Slider() {
                                     Proin at sapien ipsum. Aenean placerat, quam ac tempor congue, orci
                                 </p>
                                 <Link to="/allProducts">
-                                    <button className='button text-black my-4 bg-[color:var(--special-color)]'>Shop now</button>
+                                    <button className='button text-white my-4 gradColor'>Shop now</button>
                                 </Link>
                             </div>
                         </div>
@@ -44,7 +44,7 @@ function Slider() {
                                     Proin at sapien ipsum. Aenean placerat, quam ac tempor congue, orci
                                 </p>
                                 <Link to="/allProducts">
-                                    <button className='button text-black my-4 bg-[color:var(--special-color)]'>Shop now</button>
+                                    <button className='button text-white my-4 gradColor'>Shop now</button>
                                 </Link>
                             </div>
                         </div>
@@ -69,7 +69,7 @@ function Slider() {
                                     Proin at sapien ipsum. Aenean placerat, quam ac tempor congue, orci
                                 </p>
                                 <Link to="/allProducts">
-                                    <button className='button text-black my-4 bg-[color:var(--special-color)]'>Shop now</button>
+                                    <button className='button text-white my-4 gradColor'>Shop now</button>
                                 </Link>
                             </div>
                         </div>

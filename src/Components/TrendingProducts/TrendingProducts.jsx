@@ -87,7 +87,7 @@ function TrendingProducts(props) {
                                 <p className='text-[#4aa5ad] font-medium'>Price : {pd.price}$</p>
                                 <Link to="/allProducts">
 
-                                    <button className='button bg-[color:var(--special-color)]   w-full flex items-center justify-center gap-3 my-3 hover:bg-[#36a1a9] hover:text-white duration-200'>
+                                    <button className='button gradColor hover:gradHoverColor text-white w-full flex items-center justify-center gap-3 my-3 hover:bg-[#36a1a9] hover:text-white duration-300'>
                                         <BiShoppingBag className='text-2xl' /> Shop Now
                                     </button>
                                 </Link>

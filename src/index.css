@@ -5,8 +5,10 @@
 @layer components {
   /*  utilities */
   .button {
-    @apply py-1 px-4 font-normal;
+    @apply py-2 px-4 font-normal;
   }
+
+    
 
   /*  utilities */
 
@@ -36,7 +38,7 @@
   }
 
   .navItems ul {
-    @apply flex items-center justify-center gap-10 uppercase text-[16px] font-medium;
+    @apply flex items-center justify-start md:justify-center gap-4 md:gap-10 py-20 md:py-0 uppercase text-[16px] font-medium;
   }
 
   .navItems ul li a {
@@ -150,11 +152,11 @@
 
   /*  user login form start */
   .UserLoginContainer {
-    @apply w-full min-h-[700px] p-5 border border-[color:var(--special-color)];
+    @apply w-full bg-gray-100 min-h-[700px] p-5 border border-[color:var(--special-color)];
   }
 
   .loginForm {
-    @apply w-[50%] m-auto border border-[color:var(--special-color)] py-5 px-7;
+    @apply w-full md:w-[50%] bg-gray-50 m-auto border border-[color:var(--special-color)] py-5 px-7;
   }
 
   .formInput {
@@ -165,7 +167,7 @@
 
   /*  shipment start */
   .shipmentContainer {
-    @apply bg-gray-100 w-full min-h-screen py-10 px-5;
+    @apply bg-gray-200 w-full min-h-screen py-10 px-5;
   }
 
   .shipmentContainer form {
@@ -187,18 +189,18 @@
 
   /*  dashboard start */
   .adminSidebar{
-    @apply w-[300px] h-screen overflow-y-scroll scroll-m-[24rem] bg-gradient-to-r from-[#191d3d] to-[black]  text-white px-5
+    @apply duration-500 h-screen overflow-y-scroll scroll-m-[24rem] bg-gradient-to-r from-[#191d3d] to-[black]  text-white px-5
   }
   .adminSidebar ul{
     @apply my-10 flex flex-col gap-4
   }
   .adminSidebar ul li{
-    @apply uppercase  bg-[#282a2f] py-2 text-center text-[#fffcfc] font-medium
+    @apply uppercase  bg-[#191d3d] py-2 text-center text-[#fffcfc] font-medium
   }
   .adminSidebar ul li a{
     @apply text-center flex justify-center items-center gap-2 
   }
-  .adminSidebar svg{
+  .adminSidebar ul li svg{
      @apply text-2xl text-[color:var(--special-color)]
   }
   /*  dashboard end */
@@ -284,8 +286,15 @@
 
   :root {
     --special-color: #40f2ff;
+    --gradColor: linear-gradient(to right, #00bcd4, #2196f3);
   }
-
+  .gradColor{
+    color: white;
+    background: var(--gradColor); 
+  }
+ .gradHoverColor{
+  background: linear-gradient(to right,  #2196f3 , #00bcd4);
+ }
   /*  menu resposnive */
   .menuIcon {
     display: none;

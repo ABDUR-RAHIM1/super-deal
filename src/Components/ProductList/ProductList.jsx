@@ -3,8 +3,7 @@ import { AiOutlineShoppingCart, AiOutlineArrowRight, AiFillDelete, AiFillEdit } 
 import img from "../../images/demo.png"
 import { adminContext, CartContext } from '../../App'
 import { Link } from 'react-router-dom' 
-function ProductList(props) { 
-    const [isAdminLogin] = useContext(adminContext)
+function ProductList(props) {  
     const [cart, setCart] = useContext(CartContext)
     const { title, price, categorie, image, _id } = props.product
     const handleClick = (product) => {

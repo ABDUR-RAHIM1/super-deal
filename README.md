@@ -17,7 +17,7 @@ slider costomize
 7 / password hasing
 12 /  edit /  products in dashboard
 12 / show welecome message before submit order
-
+13/ products details pages related product
 ## api link 
 
 ## product api address : 

@@ -39,7 +39,7 @@ function AdminLogin() {
           }, 1500);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => toast.error(err));
   };
 
   //    redirect admin already login
@@ -93,7 +93,7 @@ function AdminLogin() {
         </Form.Group>
 
         <button
-          className="mb-3 button px-5 py-2 font-medium bg-[color:var(--special-color)] hover:text-orange-800"
+          className="mb-3 button px-5 py-2 font-medium gradColor hover:gradHoverColor"
           type="submit"
         >
           {isLoading ? "Checking..." : "Login"}

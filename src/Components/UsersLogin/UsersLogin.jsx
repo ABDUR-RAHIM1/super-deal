@@ -137,7 +137,7 @@ function UsersLogin() {
           />
 
           <button
-            className="button px-4 py-2 text-black bg-[color:var(--special-color)]"
+            className="button px-4 py-2 gradColor hover:gradHoverColor font-medium"
             type="submit"
           >
             {isLoading ? "Checking" : click ? "LOGIN" : "REGISTER"}

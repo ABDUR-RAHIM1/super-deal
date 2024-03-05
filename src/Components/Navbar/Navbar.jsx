@@ -1,16 +1,16 @@
 import React, { useContext } from 'react'
 import { useState } from 'react';
 import { FaSearch, FaCartPlus } from "react-icons/fa";
-import { AiOutlineMenuUnfold, AiOutlineUserAdd } from "react-icons/ai";
+import { AiOutlineMenuUnfold } from "react-icons/ai";
 import { IoClose } from "react-icons/io5";
-import { adminContext, CartContext } from '../../App';
+import { CartContext } from '../../App';
 
 import { Link, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function Navbar() {
   const location = useLocation().pathname
   const [cart] = useContext(CartContext);
-  const [isAdminLogin] = useContext(adminContext)
 
   const [searchClick, setSeacrClick] = useState(false)
   const [showBtn, setShowBtn] = useState(false)
@@ -25,6 +25,13 @@ function Navbar() {
       setShowBtn(false)
     }
   }
+
+
+  const isUserLogin = localStorage.getItem("userLogin");
+
+
+
+
   return (
     <>
       <header className='headerContainer'>
@@ -41,9 +48,7 @@ function Navbar() {
         </div>
         <nav className="navItems">
           <ul className={`${menuClick ? "right-0" : "-right-[600px]"}`}>
-            <li>
-              {isAdminLogin && <Link className='navItems' to="/dashboard">Dashboard</Link>}
-            </li>
+
             <li>
               <Link className='navItems' to="/allProducts">Products</Link>
             </li>
@@ -53,9 +58,14 @@ function Navbar() {
               <Link className='navItems' to="/shipment">Shipment</Link>
             </li>
             <li>
-              <Link className='navItems' to="/login">Sign up</Link>
+              {
+                isUserLogin ?
+                  <Link onClick={()=>localStorage.removeItem("userLogin")} className='text-red-500'>Log-out</Link>
+                  :
+                  <Link className='navItems' to="/login">Sign up</Link>
+              }
             </li>
-           
+
           </ul>
         </nav>
 
@@ -67,7 +77,7 @@ function Navbar() {
         </Link>
 
         <div onClick={() => setMenuClick(!menuClick)} className='menuIcon'>
-          {menuClick ? <IoClose />
+          {menuClick ? <IoClose className='text-red-500' />
             :
             <AiOutlineMenuUnfold />
 
@@ -76,17 +86,17 @@ function Navbar() {
         </div>
       </header>
 
-  { 
-    location === "/allProducts" &&
-  <div className="addBanner">
-        <h5>NO LIMITED</h5>
-        <h5> Worldwide free shipping</h5>
-        <h5>MONEY BACK</h5>
-        <h5> 7 days money back guaranteed</h5>
-        <h5>SAFETY</h5>
-        <h5> We never share your individual info</h5>
-      </div>
-}
+      {
+        location === "/allProducts" &&
+        <div className="addBanner">
+          <h5>NO LIMITED</h5>
+          <h5> Worldwide free shipping</h5>
+          <h5>MONEY BACK</h5>
+          <h5> 7 days money back guaranteed</h5>
+          <h5>SAFETY</h5>
+          <h5> We never share your individual info</h5>
+        </div>
+      }
     </>
   )
 }

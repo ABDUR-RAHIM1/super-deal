@@ -29,7 +29,7 @@ function CartCounter(props) {
             {cart.length <= 0 ?
                 <button className='btn btn-danger w-100 mt-3' disabled>Cart is Empty</button> :
                 <Link to="/shipment">
-                    <button className='button py-2 w-full bg-blue-500 my-4 text-white font-medium'>Order Now</button>
+                    <button className='button py-2 w-full  gradColor hover:gradHoverColor my-4 font-medium'>Order Now</button>
                 </Link>
             }
         </div>
