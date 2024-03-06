@@ -47,7 +47,7 @@ function AdminLogin() {
   useEffect(() => {
     const isAdminLogin = localStorage.getItem("adminLogin");
     if (isAdminLogin) {
-      nevigate("/dashboard");
+      nevigate("/admin-dashboard");
     }
   }, []);
   return (

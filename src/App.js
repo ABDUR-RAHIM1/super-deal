@@ -13,8 +13,7 @@ import Shipment from './Components/Shipment/Shipment';
 import UsersLogin from './Components/UsersLogin/UsersLogin';
 import Home from './Pages/Home'
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
-import Admin from './Components/Dashboard/Admin';
+import { ToastContainer } from 'react-toastify'; 
 import DashboardContent from './Components/Dashboard/DashboardContent/DashboardContent';
 import AddProduct from './Components/Dashboard/Addpost/AddProduct';
 import Users from './Components/Dashboard/Users/Users';

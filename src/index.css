@@ -195,7 +195,7 @@
     @apply my-10 flex flex-col gap-4
   }
   .adminSidebar ul li{
-    @apply uppercase  bg-[#191d3d] py-2 text-center text-[#fffcfc] font-medium
+    @apply uppercase  bg-[#191d3d] py-2 text-center text-[#fffcfc] font-medium hover:gradHoverColor
   }
   .adminSidebar ul li a{
     @apply text-center flex justify-center items-center gap-2 
@@ -203,6 +203,27 @@
   .adminSidebar ul li svg{
      @apply text-2xl text-[color:var(--special-color)]
   }
+
+
+  /*  dashboard Component start */
+      .DashboardContainer{
+        @apply text-blue-900
+      }
+      .orderArea{
+        @apply flex items-center justify-between flex-wrap
+      }
+      .orderCard{
+        @apply w-full sm:w-[48%] md:w-[31%] my-4 hover:gradHoverColor hover:text-white duration-300 cursor-pointer border border-blue-100 bg-gray-50 py-2 px-3 shadow-sm rounded-sm
+      }
+      .orderCard h4{
+        @apply capitalize font-medium
+      }
+      .orderCard h2{
+        @apply text-3xl font-semibold
+      }
+  /*  dashboard Component end */
+
+
   /*  dashboard end */
 
   /*  invoice / order sheet start */
