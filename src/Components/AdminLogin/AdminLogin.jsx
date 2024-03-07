@@ -35,7 +35,7 @@ function AdminLogin() {
           setIsLoading(false);
           localStorage.setItem("adminLogin", JSON.stringify(true));
           setTimeout(() => {
-            nevigate("/dashboard");
+            nevigate("/admin-dashboard");
           }, 1500);
         }
       })

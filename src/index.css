@@ -213,13 +213,28 @@
         @apply flex items-center justify-between flex-wrap
       }
       .orderCard{
-        @apply w-full sm:w-[48%] md:w-[31%] my-4 hover:gradHoverColor hover:text-white duration-300 cursor-pointer border border-blue-100 bg-gray-50 py-2 px-3 shadow-sm rounded-sm
+        @apply w-full sm:w-[48%] md:w-[31%] my-4 hover:gradHoverColor hover:text-white duration-300 cursor-pointer border border-blue-100 bg-white py-2 px-3 shadow-sm rounded-sm
       }
       .orderCard h4{
         @apply capitalize font-medium
       }
       .orderCard h2{
         @apply text-3xl font-semibold
+      }
+      .analysisContainer{
+        @apply w-full flex items-start justify-between flex-wrap py-10 px-3 bg-white my-5
+      }
+      .analysisCol{
+        @apply w-full md:w-[48%] my-4
+      }
+      .analysisCol h5{
+        @apply font-medium  my-3 capitalize text-blue-900
+      }
+      .analysisCol ul li{
+        @apply my-2 capitalize text-blue-900 font-normal list-disc
+      }
+      .analysisCol li span{
+        @apply text-blue-800 font-bold
       }
   /*  dashboard Component end */
 
@@ -266,6 +281,12 @@
   @apply bg-blue-200 py-10 px-2 my-4
 }
   /*  invoice / order sheet snd */
+
+  /*  sslider start */
+  .sliderCard{
+    @apply flex items-center justify-start flex-wrap text-white pl-10 pr-4
+  }
+  /*  sslider ens */
 
 }
 
@@ -363,4 +384,6 @@
   }
 
   /* newslatter end  */
+ 
+
 }

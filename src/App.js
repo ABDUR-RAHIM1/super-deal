@@ -52,12 +52,14 @@ function App() {
                                 <Route path='/manage-orders' element={<Order />} />
                             </Route>
                             {/*  admin protected routes  end*/}
-                            <Route path="/allProducts" element={<ProductContainer />} />
+                            
+                            <Route path="/products" element={<ProductContainer />} />
                             <Route path="/cart" element={<Cart />} />
                             <Route path="/login" element={<UsersLogin />} />
                             <Route path="/admin-login" element={<AdminLogin />} />
                             <Route path="/details" element={<Details />} />
                             <Route path="/orderDetails/:id" element={<OrderDetails />} />
+
                             {/*  shipment protected */}
                             <Route element={<ProtectedRoute />}>
                                 <Route path='/shipment' element={<Shipment />} />

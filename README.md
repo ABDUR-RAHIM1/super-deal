@@ -22,7 +22,8 @@ slider costomize
 13 / invoice print
 14 / seacring proucts with search bar
 15 / active navitems
-
+16 / responsive
+17 /  add framer motion
 
 ## api link 
 ## product api address : 

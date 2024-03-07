@@ -36,6 +36,7 @@ function ProductContainer() {
   };
   return (
     <>
+     <h2 className="text-center my-4 text-2xl md:text-3xl uppercase font-normal italic">List Of Categories</h2>
       <div className="productFilterArea">
         {product &&
           product.map((pd) => {

@@ -52,7 +52,7 @@ function Navbar() {
               <Link className='navItems' to="/">Home</Link>
             </li>
             <li>
-              <Link className='navItems' to="/allProducts">Products</Link>
+              <Link className='navItems' to="/products">Products</Link>
             </li>
             <li><Link to={"/"}>men's</Link></li>
             <li className='logo'><Link to={"/"}>super deal</Link></li>
