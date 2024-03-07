@@ -28,7 +28,7 @@ function Users() {
       <div className="text-center overflow-x-auto">
         <h2 className='text-center text-2xl mb-5 text-gray-600 uppercase'>Users List</h2>
         {loading ? "Loading . . ."
-          : <table className="table bg-gray-100"  >
+          : <table className="table bg-gray-50"  >
             <thead className=" uppercase text-sm  font-normal">
               <tr>
                 <th>Join Date</th>
@@ -38,7 +38,7 @@ function Users() {
               </tr>
             </thead>
             <tbody>
-              {user.map((user) => (
+              {user && user.slice().reverse().map((user) => (
 
                 <tr key={user._id}>
                 <td>{new Date(user.date).getDate()} - {new Date(user.date).getMonth() + 1} - {new Date(user.date).getFullYear()}</td>

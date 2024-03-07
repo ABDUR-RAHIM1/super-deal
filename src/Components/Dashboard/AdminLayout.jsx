@@ -30,7 +30,7 @@ function AdminLayout({ children }) {
 
 
       </div>
-      <div className=" flex-1 h-screen overflow-y-scroll px-3 py-10 bg-gray-200">
+      <div className=" flex-1 h-screen overflow-y-scroll px-3 py-10 bg-gray-100">
         {children}
 
       </div>

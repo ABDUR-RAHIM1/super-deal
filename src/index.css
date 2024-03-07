@@ -38,7 +38,7 @@
   }
 
   .navItems ul {
-    @apply flex items-center justify-start md:justify-center gap-4 md:gap-10 py-20 md:py-0 uppercase text-[16px] font-medium;
+    @apply flex items-center justify-start md:justify-center gap-4 md:gap-10 py-32 md:py-0 uppercase text-[16px] font-medium;
   }
 
   .navItems ul li a {
@@ -64,7 +64,7 @@
 
   /*  product card start */
   .productCard {
-    @apply w-[48%] sm:w-[32%] md:w-[23%] lg:w-[19%] min-h-[250px] bg-gray-100 my-4;
+    @apply w-[48%] sm:w-[32%] md:w-[23%] lg:w-[19%] min-h-[250px] bg-gray-50 my-4 hover:shadow-md;
   }
 
   .productCard img {
@@ -152,11 +152,11 @@
 
   /*  user login form start */
   .UserLoginContainer {
-    @apply w-full bg-gray-100 min-h-[700px] p-5 border border-[color:var(--special-color)];
+    @apply w-full bg-gray-100 min-h-[700px] p-5 border border-[color:var(--special-color)] flex items-center justify-center;
   }
 
   .loginForm {
-    @apply w-full md:w-[50%] bg-gray-50 m-auto border border-[color:var(--special-color)] py-5 px-7;
+    @apply w-full md:w-[100%] bg-gray-50 m-auto border border-[color:var(--special-color)] py-5 px-7;
   }
 
   .formInput {

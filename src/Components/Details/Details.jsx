@@ -19,8 +19,7 @@ function Details() {
   useEffect(() => {
     fetch("https://panda-backend.onrender.com/product/all")
       .then((res) => res.json())
-      .then((product) => {
-        //  console.log(product.products)
+      .then((product) => { 
         const products = product.products;
 
         const relatedProducts = products.filter(
@@ -76,7 +75,7 @@ function Details() {
                 Releted Product Are Not Found
               </h2>
             ) : (
-              <div className="flex items-center flex-wrap">
+              <div className="flex items-center justify-between flex-wrap">
                 {reletedProducts.map((rpd) => (
                   <ProductList key={rpd._id} product={rpd} />
                 ))}

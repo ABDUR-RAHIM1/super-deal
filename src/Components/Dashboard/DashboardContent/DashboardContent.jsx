@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import AdminLayout from '../AdminLayout'
 import { MdFavoriteBorder } from 'react-icons/md'
-import { GiProgression } from "react-icons/gi";
-import { FaSortAmountDown } from "react-icons/fa"; 
+import { GiPayMoney, GiProgression, GiReceiveMoney, GiTakeMyMoney } from "react-icons/gi";
+import { FaSortAmountDown , FaRegUser  } from "react-icons/fa"; 
 
 
 
@@ -90,7 +90,7 @@ function DashboardContent() {
             <div className='flex items-center justify-between my-3'>
               <h2 >{totalPrice(products)}</h2>
               <p className='font-medium'>{products.length}<span className='text-blue-700'>( Products )</span> </p>
-              <FaSortAmountDown className="text-3xl" />
+              <GiPayMoney className="text-3xl" />
             </div>
           </div>
 
@@ -99,7 +99,7 @@ function DashboardContent() {
             <div className='flex items-center justify-between my-3'>
               <h2 >{totalRevinew}</h2>
               <p className='font-medium'>{products.length / 100}<span className='text-blue-700'>%</span> </p>
-              <FaSortAmountDown className="text-3xl" />
+              <GiTakeMyMoney className="text-3xl" />
             </div>
           </div>
           <div className="orderCard">
@@ -107,11 +107,18 @@ function DashboardContent() {
             <div className='flex items-center justify-between my-3'>
               <h2 >  {totalRevinew - totalPrice(products)}</h2>
               <p className='font-medium'>{products.length / 100}<span className='text-blue-700'>%</span> </p>
-              <FaSortAmountDown className="text-3xl" />
+              <GiReceiveMoney className="text-3xl" />
             </div>
           </div>
 
-
+          <div className="orderCard">
+            <h4>Total Costermers</h4>
+            <div className='flex items-center justify-between my-3'>
+              <h2 >  {users.length}</h2>
+              <p className='font-medium'> Active  <span className='text-blue-700'>users</span> </p>
+              <FaRegUser  className="text-3xl" />
+            </div>
+          </div>
         </div>
       </div>
     </AdminLayout>

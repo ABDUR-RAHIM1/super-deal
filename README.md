@@ -11,15 +11,20 @@ modified UI =
 10/ save login info in localstorage   -- done
 4 / admin dashboard saperet routing  - done
 9 / add / delete products in dashboard  -done
+13/ products details pages related product  - done
+12 / show welecome message before submit order  - - done
+4/ cart product img sizing - done
 
 slider costomize 
 5 / eye catching images
 7 / password hasing
 12 /  edit /  products in dashboard
-12 / show welecome message before submit order
-13/ products details pages related product
-## api link 
+13 / invoice print
+14 / seacring proucts with search bar
+15 / active navitems
 
+
+## api link 
 ## product api address : 
 
 ## 1 add Product : https://panda-backend.onrender.com/product/addProduct   ok

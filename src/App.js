@@ -20,6 +20,7 @@ import Users from './Components/Dashboard/Users/Users';
 import ManageProducts from './Components/Dashboard/ManageProducts/ManageProducts';
 import Order from './Components/Dashboard/Order/Order';
 import OrderDetails from './Components/Dashboard/OrderDetails/OrderDetails';
+import ThanksMessage from './Components/ThanksMessage/ThanksMessage';
 
 
 export const CartContext = createContext();
@@ -60,6 +61,7 @@ function App() {
                             {/*  shipment protected */}
                             <Route element={<ProtectedRoute />}>
                                 <Route path='/shipment' element={<Shipment />} />
+                                <Route path='/thanks' element={<ThanksMessage />} />
                             </Route>
 
                             <Route path="/*" element={<ErrorPage />} />

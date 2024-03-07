@@ -48,7 +48,9 @@ function Navbar() {
         </div>
         <nav className="navItems">
           <ul className={`${menuClick ? "right-0" : "-right-[600px]"}`}>
-
+            <li className='md:hidden'>
+              <Link className='navItems' to="/">Home</Link>
+            </li>
             <li>
               <Link className='navItems' to="/allProducts">Products</Link>
             </li>
@@ -60,7 +62,7 @@ function Navbar() {
             <li>
               {
                 isUserLogin ?
-                  <Link onClick={()=>localStorage.removeItem("userLogin")} className='text-red-500'>Log-out</Link>
+                  <Link onClick={() => localStorage.removeItem("userLogin")} className='text-red-500'>Log-out</Link>
                   :
                   <Link className='navItems' to="/login">Sign up</Link>
               }

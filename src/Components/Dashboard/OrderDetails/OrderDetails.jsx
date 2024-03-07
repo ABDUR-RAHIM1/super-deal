@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { useLocation, useParams } from 'react-router-dom'
-import Table from 'react-bootstrap/Table';
-import Spinner from "../../Spinner/Spinner"
-import "./OrderDetails.css"
+import { useParams } from 'react-router-dom' 
+import Spinner from "../../Spinner/Spinner" 
+
 function OrderDetails() {
-    const { id } = useParams()
-    const orderList = useLocation().state;
+    const { id } = useParams() 
 
     const [order, setOrder] = useState([])
     useEffect(() => {

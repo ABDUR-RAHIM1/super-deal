@@ -41,7 +41,7 @@ function ManageProducts() {
                 {isLoading ?
                     "Loading . . "
                     :
-                    <table className='table bg-gray-100'>
+                    <table className='table bg-gray-50'>
                         <thead className='uppercase font-normal'>
                             <tr>
                                 <th>sl No</th>
@@ -54,7 +54,7 @@ function ManageProducts() {
                         </thead>
                         <tbody>
                             {
-                                product && product.map((pd, i) => (
+                                product && product.slice().reverse().map((pd, i) => (
                                     <tr key={pd._id}>
                                         <td>{i + 1}</td>
                                         <td>

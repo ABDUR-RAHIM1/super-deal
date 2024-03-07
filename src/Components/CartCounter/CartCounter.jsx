@@ -1,9 +1,9 @@
-import React from 'react' 
-import { Link } from 'react-router-dom';  
+import React from 'react'
+import { Link } from 'react-router-dom';
 
 function CartCounter(props) {
-    const { cart } = props; 
-    
+    const { cart } = props;
+
     let totalPrice = 0;
     let shipping = 0;
     for (let i = 0; i < cart.length; i++) {
@@ -13,13 +13,15 @@ function CartCounter(props) {
 
     if (totalPrice <= 0) {
         shipping = 0
-    } else if (totalPrice <= 100) {
-        shipping = 32
-    }
-    else if (totalPrice >= 501) {
+    } else if (totalPrice > 100) {
         shipping = 56
     }
-
+    else if (totalPrice > 500) {
+        shipping = 110
+    }else{
+        shipping = 0
+    }
+   
     return (
         <div className='cartCounter'>
             <h4 className='text-2xl my-3'>Selected Items : {cart.length}</h4>

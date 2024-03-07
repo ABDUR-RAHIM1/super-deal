@@ -32,7 +32,7 @@ function Order() {
                 {
                     loading ? "Loading . . ." :
 
-                        <table className='table bg-gray-100'>
+                        <table className='table bg-gray-50'>
                             <thead className='uppercase font-medium'>
                                 <tr>
                                     <th>Order Id</th>
@@ -43,7 +43,7 @@ function Order() {
                             </thead>
                             <tbody>
                                 {
-                                    order.map(order => {
+                                  order &&  order.slice().reverse().map(order => {
                                         console.log(order)
                                         return (
                                             <tr key={order._id}>
