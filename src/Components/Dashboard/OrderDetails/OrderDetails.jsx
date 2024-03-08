@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom' 
-import Spinner from "../../Spinner/Spinner" 
+import { useParams } from 'react-router-dom'
+import Spinner from "../../Spinner/Spinner"
+import { Page, Text, View, Document, StyleSheet, PDFViewer, Image } from '@react-pdf/renderer';
 
 function OrderDetails() {
-    const { id } = useParams() 
+    const { id } = useParams()
 
     const [order, setOrder] = useState([])
     useEffect(() => {
@@ -36,125 +37,210 @@ function OrderDetails() {
         shipping = 56
     }
 
-    console.log(findOrder)
 
+    const styles = StyleSheet.create({
+        body: {
+            width: "100%",
+            height: "100vh"
+        },
+        header: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexDirection: "row",
+            borderTop: "10px solid #0D47A1"
+        },
+        textHeader: {
+            fontSize: "20px",
+            color: "#0D47A1",
+            margin: "10px 0px",
+            textTransform: "uppercase"
+        },
+        text: {
+            fontSize: "12px",
+            lineHeight: "1.5px",
+            color: "#2E2C2C",
+            textTransform :"capitalize"
+        },
+        invoiceAddress: {
+            display: "flex",
+            alignItems: "start",
+            justifyContent: "space-between",
+            flexDirection: "row",
+            margin: "15px 0px",
+            paddingBottom: "10px",
+            borderBottom: "1px solid #0D47A1"
+        },
+        addCol: {
+            width: "48%"
+        },
+        addTitle: {
+            margin: "10px 0px",
+            padding: "5px",
+            backgroundColor: "#0D47A1",
+            color: "white",
+            fontSize: "16px",
+            fontStyle: "italic",
+            textTransform: "uppercase"
+        },
+        infoTitle: {
+            fontSize: "14px",
+            fontWeight: 'normal',
+            textAlign: "center",
+            margin: "10px 0px",
+            color: "#2E2C2C"
+        },
+        image: {
+            width: "20px",
+            height: "20px"
+        },
+        flexBox: {
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexDirection: "row",
+            borderBottom: "1px solid #0D47A1",
+            padding: "10px 0px"
+        },
+        flex : {
+            display: "flex",
+            alignItems: "start",
+            justifyContent: "space-between",
+            flexDirection: "row"
+        },
+        payTitle : {
+          fontSize:"15px",
+          backgroundColor :"#0D47A1",
+          color:"white",
+          padding :"4px",
+          margin :"10px 0px"
+        },
+       
+        footer : {
+               backgroundColor :"#bfdbfe",
+               padding :"30px 10px",
+               color :"#1e3a8a",
+               margin :"20px 0px"
+        }
+
+
+    })
     return (
+        <div className=''>
+
+            <PDFViewer style={styles.body}>
+                <Document>
+                    <Page size="A4" style={{ padding: "10px" }} >
+                        <View style={styles.header} >
+                            <View>
+                                <Text style={styles.textHeader}>Invoice</Text>
+                                <Text style={styles.text}>Invoice No : {findOrder._id} </Text>
+                                <Text style={styles.text}>Date : {new Date(findOrder.orderDate).getDate()} - {new Date(findOrder.orderDate).getMonth() + 1} - {new Date(findOrder.orderDate).getFullYear()} </Text>
+                            </View>
+
+                            <View>
+                                <Text style={styles.textHeader}>Super-deal</Text>
+                                <Text style={styles.text}>Best Online Shopping Platform</Text>
+                            </View>
+                        </View>  {/** header end **/}
 
 
-        <div className='invoiceContainer'>
-            <div className="invoiceHeader">
-                <div>
-                    <h2>Invoice</h2>
-                    <p>Invoice No : {findOrder._id}</p>
-                    <p className='my-2'>Date : {new Date(findOrder.orderDate).getDate()} - {new Date(findOrder.orderDate).getMonth() + 1} - {new Date(findOrder.orderDate).getFullYear()}</p>
-                </div>
-                <div>
-                    <h2>Super-Deal</h2>
-                    <p>Best Online Buying Platform</p>
-                </div>
-            </div>
-
-            <div className='invoiceAddress'>
-                <div className='w-[48%]'>
-                    <h2> Order From </h2>
-                    <p>City : {findOrder.city}</p>
-                    <p> Present Address : {findOrder.presentAddress}</p>
-                    <p>permanent Address : {findOrder.permanentAddress}</p>
-                    <p>Zip Code : {findOrder.zip}</p>
-                </div>
-                <div className='w-[48%]'>
-                    <h2> Order To </h2>
-                    <p>City : Rangpur </p>
-                    <p> Present Address : Rangpur </p>
-                    <p>permanent Address : Lalmonirhat -Road. 208 </p>
-                    <p>Zip Code : 5400</p>
-                </div>
-            </div>
-
-            {/*  costomer table */}
-            <div className="costomerInfo">
-                <h2 className='text-xl text-center italic my-2'>Costomer Information</h2>
-                <table className='table bg-gray-50 border-b border-blue-700'>
-                    <thead>
-                        <tr>
-                            <th>  <p>Costomer Name </p></th>
-                            <th>  <p>Phone Number </p></th>
-                            <th >  <p>Email </p></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td> {findOrder.name}</td>
-                            <td> {findOrder.phone}</td>
-                            <td> {findOrder.email}</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        {null}
-                    </tfoot>
-                </table>
-            </div>
-
-            {/*  odrder table */}
-            <div className="orderInfo">
-                <h2 className='text-xl text-center italic my-2'>Product Information</h2>
-                <table className='table bg-gray-50 border-b border-blue-700'>
-                    <thead>
-                        <tr>
-                            <th>sl</th>
-                            <th>Product ID</th>
-                            <th>Image</th>
-                            <th>category</th>
-                            <th>Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            findOrder &&
-                            findOrder.order.map((or, i) => (
-                                <tr>
-                                    <td>{i}</td>
-                                    <td>{or._id}</td>
-                                    <td><img className='w-10 h-10' src={or.image} alt="" /></td>
-                                    <td>{or.categorie}</td>
-                                    <td>{or.price} BDT </td>
-                                </tr>
-                            ))
-                        }
-                    </tbody>
-                    <tfoot>
-                        {null}
-                    </tfoot>
-                </table>
-            </div>
-
-            <div className="paymentArea">
-                <div className='w-[48%]'>
-                    <h2>Payment Info</h2>
-                    <p className='font-medium text-lg uppercase text-blue-900'> Cash On Delivery </p>
-                    <p>Stay With Us for Better Services</p>
-                </div>
-                <div className='w-[48%]'>
-                    <p> Total Items : {findOrder.order.length} </p>
-                    <p>Shipping Cost : {shipping} BDT</p>
-                    <p>Products Cost : {totalPrice} BDT</p>
-                    <h2>Total Price : {totalPrice + shipping} BDT</h2>
-                </div>
-            </div>
-
-            <div className='invoiceFooter'>
-                 <h1 className='text-3xl uppercase my-3 font-medium text-blue-900'>Thank You !</h1>
-                 <p className='capitalize text-blue-900 font-medium'>
-                 for choosing Super-deal for your product needs. We appreciate  hope to continue serving you in the future. If you have any questions or concerns, please don't hesitate to reach out.
-                 </p>
-            </div>
+                        <View style={styles.invoiceAddress} >
+                            <View style={styles.addCol}>
+                                <Text style={styles.addTitle}>Order From</Text>
+                                <Text style={styles.text}>City : {findOrder.city} </Text>
+                                <Text style={styles.text}>Present Address : {findOrder.presentAddress} </Text>
+                                <Text style={styles.text}>Permanent Address : {findOrder.permanentAddress} </Text>
+                                <Text style={styles.text}>Zip Code : {findOrder.zip} </Text>
+                            </View>
+                            <View style={styles.addCol}>
+                                <Text style={styles.addTitle}>Order To</Text>
+                                <Text style={styles.text}>City : Rangpur</Text>
+                                <Text style={styles.text}>Present Address : Rangpur</Text>
+                                <Text style={styles.text}>permanent Address : Lalmonirhat -Road. 208</Text>
+                                <Text style={styles.text}>Zip Code : 5400</Text>
+                            </View>
+                        </View>  {/* invoce addreess end */}
 
 
+                        {/*  costomer table start here */}
+                        <View >
+                            <Text style={styles.infoTitle}>Costomer Information</Text>
+
+                            <View style={styles.flexBox}>
+                                <Text style={styles.text}>Costomer Name</Text>
+                                <Text style={styles.text}>Phone Number</Text>
+                                <Text style={styles.text}>Email</Text>
+                            </View>
+                            <View style={styles.flexBox}>
+                                <Text style={styles.text}>{findOrder.name}</Text>
+                                <Text style={styles.text}>{findOrder.phone}</Text>
+                                <Text style={styles.text}>{findOrder.email}</Text>
+                            </View>
+
+                        </View>
+                        {/*  costomer table end here */}
+
+
+                        {/*  products information start here */}
+
+                        <View style={{ margin: "20px 0px" }}>
+                            <Text style={styles.infoTitle}>Product Information</Text>
+
+                            <View>
+                                <View style={styles.flexBox}>
+                                    <Text style={styles.text}>SL No</Text>
+                                    <Text style={styles.text}>Product Id</Text>
+                                    <Text style={styles.text}>Image</Text>
+                                    <Text style={styles.text}>Category</Text>
+                                    <Text style={styles.text}>Price  </Text>
+                                </View>
+                                {
+                                    findOrder &&
+                                    findOrder.order.map((or, i) => (
+                                        <View style={styles.flexBox}>
+                                            <Text style={styles.text}>{i}</Text>
+                                            <Text style={styles.text}>{or._id}</Text>
+                                            <Image style={styles.image} src={or.image} />
+                                            <Text style={styles.text}>{or.categorie}</Text>
+                                            <Text style={styles.text}>{or.price} BDT </Text>
+                                        </View>
+                                    ))
+                                }
+                            </View>
+                        </View>
+
+                        {/*  products information end here */}
+
+
+                        {/*  payment area start here */}
+
+                                <View style={styles.flex}>
+                                    <View style={{width:"48%"}}>
+                                         <Text style={styles.payTitle}>Payment Info</Text>
+                                         <Text style={styles.text}>Cash On Delivary</Text>
+                                         <Text style={styles.text}>Stay With Us For Better Services</Text>
+                                    </View>
+                                    <View style={{width:"48%"}}>
+                                     <Text style={styles.text}>Total Items :{findOrder.order.length} </Text>
+                                     <Text style={styles.text}>Shipping Cost : {shipping} BDT </Text>
+                                     <Text style={styles.text}>Products Cost : {totalPrice} BDT </Text>
+                                    <Text style={styles.payTitle}>Total Price : {totalPrice + shipping} BDT</Text>
+                                    </View>
+                                </View> 
+
+                        {/*  payment area end here */}
+
+                        <View style={styles.footer}>
+                             <Text style={{fontSize :"30px", margin :"10px 0px"}}>THANK YOU !</Text>
+                             <Text style={{fontSize :"13px"}}>for choosing Super-deal for your product needs. We appreciate  hope to continue serving you in the future. If you have any questions or concerns, please don't hesitate to reach out.</Text>
+                        </View>
+
+                    </Page>
+                </Document>
+            </PDFViewer>
         </div>
 
-
-
-      
     )
 }
 
