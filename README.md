@@ -14,16 +14,19 @@ modified UI =
 13/ products details pages related product  - done
 12 / show welecome message before submit order  - - done
 4/ cart product img sizing - done
+16 / responsive  -done
+5 / eye catching images - done
+slider costomize -done
+15 / active navitems
+17 /  add framer motion - done
 
-slider costomize 
-5 / eye catching images
 7 / password hasing
 12 /  edit /  products in dashboard
 13 / invoice print
 14 / seacring proucts with search bar
-15 / active navitems
-16 / responsive
-17 /  add framer motion
+
+ 
+
 
 ## api link 
 ## product api address : 

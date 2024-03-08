@@ -1,12 +1,19 @@
-.swiper-button-prev:after, .swiper-button-next:after { 
-    font-size: 18px;   
-    font-weight: 800;
-    color: white; 
+.swiper-button-prev:after, .swiper-button-next:after {
+  font-family: swiper-icons;
+  font-size: 20px !important;
+  text-transform: none !important;
+  font-weight: bolder !important;
+  color: blue;
+  background-color: white;
+  padding:5px 10px;
 }
-
+ 
+.swiper-slide{
+    height: 600px !important;
+}
  .sliderCard{
     width: 100%;
-    height: 600px;  
+    height: 100%;  
     background-image: url("../../images//banner-images/sl1.jpg");
     background-size: cover;
     object-fit: cover;
@@ -20,9 +27,9 @@
  }
 
  @keyframes slider {
-    25% {
-      background-image: url("../../images/banner-images/sl1.jpg");
-    }
+  0% {
+    background-image: url("../../images/banner-images/sl1.jpg");
+  }
     55% {
       background-image: url("../../images/banner-images/sl2.jpg");
     }
@@ -31,6 +38,15 @@
       }
 
       100% {
-        background-image: url("../../images/banner-images/sl1.jpg");
+        background-image: url("../../images/banner-images/sl2.jpg");
       }
+  }
+
+  @media screen and (max-width:768px) {
+      .sliderCard{
+        background-position: top 0 right 70%;
+      }
+      .swiper-slide{
+        height: 450px !important;
+    }
   }

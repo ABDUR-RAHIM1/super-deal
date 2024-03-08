@@ -3,6 +3,7 @@ import AdminLayout from '../AdminLayout'
 import { CiEdit } from "react-icons/ci";
 import { AiTwotoneDelete } from "react-icons/ai";
 import { toast } from 'react-toastify';
+import { motion } from "framer-motion"
 
 function ManageProducts() {
     const [product, setProduct] = useState([])
@@ -15,7 +16,7 @@ function ManageProducts() {
             .then((res) => res.json())
             .then((product) => {
                 setProduct(product.products);
-                 setIsLoaing(false);
+                setIsLoaing(false);
             });
     }, [isDelete]);
 
@@ -36,7 +37,12 @@ function ManageProducts() {
         <AdminLayout>
             <h2 className='text-3xl text-center mb-4 uppercase'>All Products</h2>
 
-            <div className='overflow-x-auto text-center '>
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: "2" }}
+
+                className='overflow-x-auto text-center '>
 
                 {isLoading ?
                     "Loading . . "
@@ -64,7 +70,7 @@ function ManageProducts() {
                                             {pd.categorie}
                                         </td>
                                         <td>
-                                            {pd.price} - BDT
+                                            {pd.price} <span className='text-sm text-blue-800'>- BDT</span>
                                         </td>
                                         <td>
                                             <CiEdit onClick={() => toast.error("edit functionality under processing")} className='text-3xl cursor-pointer bg-blue-500 p-1 text-white' />
@@ -78,7 +84,7 @@ function ManageProducts() {
                         </tbody>
                     </table>}
 
-            </div>
+            </motion.div>
 
         </AdminLayout>
     )

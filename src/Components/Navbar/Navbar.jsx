@@ -7,6 +7,7 @@ import { CartContext } from '../../App';
 
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 function Navbar() {
   const location = useLocation().pathname
@@ -71,7 +72,7 @@ function Navbar() {
           </ul>
         </nav>
 
-        <Link className='cartItem' to={cart.length <= 0 ? '/allProducts' : '/cart'}>
+        <Link onClick={()=>toast.error("Cart Is Empty")} className='cartItem' to={cart.length <= 0 ? '/products' : '/cart'}>
           <div className="NavIcon">
             <FaCartPlus />
             <span>{cart.length}</span>

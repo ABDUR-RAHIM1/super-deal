@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { AiOutlinePlus } from 'react-icons/ai'
 import AdminLayout from '../AdminLayout'
 import { toast } from 'react-toastify'
+import {motion} from "framer-motion"
 
 function AddProduct() {
   const [imgLoading, setImgLoading] = useState(false)
@@ -70,7 +71,12 @@ function AddProduct() {
   }
   return (
     <AdminLayout>
-      <div className='w-full text-gray-600'>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: "0.5" }} 
+    
+      className='w-full text-gray-600'>
         <div className="w-full md:w-[70%] m-auto py-5 px-3 bg-gray-100">
           <form onSubmit={handleSubmit} method='POST'>
            <h2 className='text-xl md:text-3xl text-center uppercase my-3 italic font-normal'>Add Product</h2>
@@ -135,7 +141,7 @@ function AddProduct() {
           </form>
         </div>
 
-      </div>
+      </motion.div>
     </AdminLayout>
   )
 }

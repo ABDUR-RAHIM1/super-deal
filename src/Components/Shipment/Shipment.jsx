@@ -6,9 +6,10 @@ import Row from 'react-bootstrap/Row';
 import { CartContext } from '../../App';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { motion } from "framer-motion"
 
 function Shipment() {
-  const [isLoading, setIsLoading] = useState(false) 
+  const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
   const [cart, setCart] = useContext(CartContext)
   const [order, SetOrder] = useState({
@@ -40,7 +41,7 @@ function Shipment() {
         setIsLoading(false)
         toast("Order Submit Successful")
         if (data.message === "order is fully completed") {
-          setCart([]); 
+          setCart([]);
           navigate('/thanks')
         }
       })
@@ -49,7 +50,11 @@ function Shipment() {
 
 
   return (
-    <div className="shipmentContainer">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: "0.5" }}
+      className="shipmentContainer">
       <h2 className='text-center text-2xl capitalize my-3'>
         Fill up the form to submit the order
       </h2>
@@ -158,7 +163,7 @@ function Shipment() {
       </Form>
 
 
-    </div>
+    </motion.div>
   );
 }
 

@@ -2,7 +2,6 @@
 import React from 'react';
 import './Slider.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import demo from "../../images/banner-images/s1.png"
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
@@ -34,57 +33,26 @@ function Slider() {
 
 
     return (
-        <div className='w-full h-[500px]'>
+        <div className='w-full h-[450px] md:h-[600px] bg-black'>
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
 
                 {
                     sliderData.map((sd, i) => (
                         <SwiperSlide>
                             <div className='sliderCard'>
-                                <div className=' w-[48%]  '>
-                                    <h2 className='text-3xl italic font-medium my-3 capitalize'>{sd.title}</h2>
-                                    <p>
+                                <div className=' w-full md:w-[48%] px-3 md:px-5 '>
+                                    <h2 className='text-2xl md:text-3xl text-blue-500 italic font-medium my-3 capitalize'>{sd.title}</h2>
+                                    <p className=' font-normal md:font-medium'>
                                         {sd.text}
                                     </p>
-                                    <Link to={"/products"} className="button inline-block my-3 gradColor">Shop Now</Link>
+                                    <Link to={"/products"} className="button hover:gradHoverColor duration-200 inline-block my-3 gradColor">Shop Now</Link>
                                 </div>
                                 {/* <img className=' w-[48%] h-[500px]' src={sd.img} alt="" /> */}
                             </div>
                         </SwiperSlide>
                     ))
                 }
-                {/* <SwiperSlide>
-                    <div className='sliderCard'>
-                        <div className=' w-[48%]  '>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos mollitia maxime sint, ipsam facilis laudantium id perspiciatis est repudiandae unde quod, assumenda corrupti voluptates ducimus expedita aliquam accusantium quasi magni vel saepe doloribus in. At, magni excepturi eaque impedit rerum ex nam delectus, ullam fugiat recusandae soluta, cumque nostrum velit.
-                        </div>
-                        <img className=' w-[48%] h-[500px]' src={demo} alt="" />
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='sliderCard'>
-                        <div className=' w-[48%]  '>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos mollitia maxime sint, ipsam facilis laudantium id perspiciatis est repudiandae unde quod, assumenda corrupti voluptates ducimus expedita aliquam accusantium quasi magni vel saepe doloribus in. At, magni excepturi eaque impedit rerum ex nam delectus, ullam fugiat recusandae soluta, cumque nostrum velit.
-                        </div>
-                        <img className=' w-[48%] h-[500px]' src={demo} alt="" />
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='sliderCard'>
-                        <div className=' w-[48%]  '>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos mollitia maxime sint, ipsam facilis laudantium id perspiciatis est repudiandae unde quod, assumenda corrupti voluptates ducimus expedita aliquam accusantium quasi magni vel saepe doloribus in. At, magni excepturi eaque impedit rerum ex nam delectus, ullam fugiat recusandae soluta, cumque nostrum velit.
-                        </div>
-                        <img className=' w-[48%] h-[500px]' src={demo} alt="" />
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='sliderCard'>
-                        <div className=' w-[48%]  '>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos mollitia maxime sint, ipsam facilis laudantium id perspiciatis est repudiandae unde quod, assumenda corrupti voluptates ducimus expedita aliquam accusantium quasi magni vel saepe doloribus in. At, magni excepturi eaque impedit rerum ex nam delectus, ullam fugiat recusandae soluta, cumque nostrum velit.
-                        </div>
-                        <img className=' w-[48%] h-[500px]' src={demo} alt="" />
-                    </div>
-                </SwiperSlide> */}
+             
             </Swiper>
         </div>
     )

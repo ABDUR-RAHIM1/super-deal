@@ -3,10 +3,15 @@ import { BsInstagram, BsTwitter } from 'react-icons/bs'
 import { FaCcMastercard, FaCcPaypal, FaCcVisa, FaFacebook, FaLocationArrow } from 'react-icons/fa'
 import { FcCallback } from 'react-icons/fc'
 import { MdOutgoingMail } from 'react-icons/md'
+import {motion} from "framer-motion"
 
 function Footer1() {
     return (
-        <div className='footer'>
+        <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: "0.5" }} 
+        className='footer'>
             <div className="footer-col">
                 <h1 className='footer-title'>𝖘𝖚𝖕𝖊𝖗 𝖉𝖊𝖆𝖑</h1>
                 <p>Dolore voluptatibus molestias rem aspernatur odit expedita corrupti unde ratione neque nihil dolor, nulla asperiores assumenda sint totam dolores nemo, obcaecati quae ipsam, eius nobis aliquam quos consequatur tempore. Quasi ratione, assumenda inventore libero maxime hic praesentium?</p>
@@ -41,8 +46,8 @@ function Footer1() {
             <div className="footer-col">
                 <h1 className='footer-title'>contact</h1>
                 <ul>
-                    <li className='flex items-center'> <FaLocationArrow className='fIcon mr-3' /> Dhabnondi 15 - Dahka 1200 </li>
-                    <li className='flex items-center'> <FcCallback className='fIcon mr-3' /> +88 01323212189 </li>
+                    <li className='flex items-center'> <FaLocationArrow className='fIcon mr-3' /> Lalmonirhat 15 - Rangpur 1200 </li>
+                    <li className='flex items-center'> <FcCallback className='fIcon mr-3' /> +88 01321040273 </li>
                     <li className='flex items-center ' > <MdOutgoingMail className='fIcon mr-3' /> <span className='lowercase'>superdealshop@gmail.com</span> </li>
                 </ul>
                 <div className="flex items-center justify-start gap-3 flex-wrap">
@@ -51,7 +56,7 @@ function Footer1() {
                     <FaCcVisa className="pyIcon" />
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import "./TrendingProducts.css"
 import { BiShoppingBag } from "react-icons/bi"
+import { motion } from "framer-motion"
 
-function TrendingProducts(props) {
+function TrendingProducts() {
     const [filteredProducts, setFilteredProducts] = useState([])
-
-
-
 
     useEffect(() => {
         fetch("https://panda-backend.onrender.com/product/all")
@@ -27,7 +25,12 @@ function TrendingProducts(props) {
                 {
                     filteredProducts.length < 1 ? <p className='text-center my-5 text-red-500'>There Was No Products</p> : filteredProducts.map((pd, i) => {
                         return (
-                            <div key={i} className='trendProduct'>
+                            <motion.div
+                                initial={{ scale: 0 , opacity:0 }}
+                                whileInView={{ scale: 1 , opacity :1 }}
+                                transition={{ duration: "0.5" }}
+                                viewport={{ once: true }}
+                                key={i} className='trendProduct'>
 
                                 <div className="imgWrapper">
                                     <img src={pd.image} alt="" />
@@ -45,7 +48,7 @@ function TrendingProducts(props) {
                                     </button>
                                 </Link>
 
-                            </div>
+                            </motion.div>
                         )
                     })
                 }

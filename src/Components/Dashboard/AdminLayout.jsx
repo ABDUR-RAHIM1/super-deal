@@ -1,13 +1,20 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
-import { IoIosMan, IoIosAdd } from "react-icons/io";
-import { MdFavoriteBorder, MdOutlineManageSearch, MdOutlineMenuOpen , MdClose  } from "react-icons/md";
+import { IoIosMan, IoIosAdd, IoMdLogOut } from "react-icons/io";
+import { MdFavoriteBorder, MdOutlineManageSearch, MdOutlineMenuOpen, MdClose } from "react-icons/md";
 
 
 function AdminLayout({ children }) {
   const [arrowClick, setArrowClick] = useState(true)
-
+  const navigate = useNavigate()
+  
+  const handleAdminLogin = () => {
+    localStorage.removeItem("adminLogin")
+    setTimeout(() => {
+      navigate("/admin-login")
+    }, 1500);
+  }
   return (
     <div className="flex">
       <div className={`adminSidebar ${arrowClick ? "w-[100px]" : "w-[300px]"}`}>
@@ -16,7 +23,7 @@ function AdminLayout({ children }) {
             arrowClick ?
               <MdOutlineMenuOpen onClick={() => setArrowClick(!arrowClick)} className="inline text-[color:var(--special-color)] cursor-pointer" />
               :
-              <MdClose  onClick={() => setArrowClick(!arrowClick)} className="inline text-red-500 cursor-pointer" />
+              <MdClose onClick={() => setArrowClick(!arrowClick)} className="inline text-red-500 cursor-pointer" />
           }
         </div>
         <ul>
@@ -25,6 +32,11 @@ function AdminLayout({ children }) {
           <li> <Link to={"/manage-users"}> <IoIosMan />  <span className={arrowClick ? "hidden" : ""}>Users</span> </Link></li>
           <li>  <Link to={"/manage-products"}> <MdOutlineManageSearch /> <span className={arrowClick ? "hidden" : ""}>Manage Products</span> </Link></li>
           <li> <Link to={"/manage-orders"}> <MdFavoriteBorder />  <span className={arrowClick ? "hidden" : ""}>orders</span> </Link></li>
+          <li onClick={handleAdminLogin}>
+            <Link>
+              <IoMdLogOut />  <span className={arrowClick ? "hidden" : ""}>Log-out</span>
+            </Link>
+          </li>
         </ul>
 
 

@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import Notification from "../../Notification/Notification"
+import { Link } from 'react-router-dom' 
 import AdminLayout from '../AdminLayout'
 import { toast } from 'react-toastify'
-
+import {motion} from "framer-motion"
 function Order() {
     const [loading, setLoading] = useState(true)
     const [order, setOrder] = useState([])
@@ -28,7 +27,12 @@ function Order() {
 
     return (
         <AdminLayout>
-            <div className='oveflow-x-auto text-center'>
+            <motion.div
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          transition={{ duration: "2" }}
+          
+            className='oveflow-x-auto text-center'>
                 {
                     loading ? "Loading . . ." :
 
@@ -62,7 +66,7 @@ function Order() {
                             </tbody>
                         </table>
                 }
-            </div>
+            </motion.div>
         </AdminLayout>
     )
 }

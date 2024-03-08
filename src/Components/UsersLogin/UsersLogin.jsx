@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { loginContext } from "../../App";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion"
 
 function UsersLogin() {
   const [isLoading, setIsLoading] = useState(false);
@@ -76,7 +77,11 @@ function UsersLogin() {
   }, []);
 
   return (
-    <div className="UserLoginContainer ">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: "0.5" }}
+      className="UserLoginContainer ">
       <div>
         <Form
           className="loginForm"
@@ -144,8 +149,8 @@ function UsersLogin() {
           </button>
         </Form>
       </div>
-    
-    </div>
+
+    </motion.div>
   );
 }
 

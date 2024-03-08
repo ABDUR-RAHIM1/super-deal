@@ -64,7 +64,7 @@
 
   /*  product card start */
   .productCard {
-    @apply w-[48%] sm:w-[32%] md:w-[23%] lg:w-[19%] min-h-[250px] bg-gray-50 my-4 hover:shadow-md;
+    @apply w-[48%] sm:w-[32%] md:w-[23%] lg:w-[19%] min-h-[250px] overflow-hidden bg-white my-4 hover:shadow-md;
   }
 
   .productCard img {
@@ -90,22 +90,22 @@
 
   /*  products details start  */
   .productDetails {
-    @apply px-5 min-h-screen py-10 bg-gray-200 flex justify-between;
+    @apply px-5 min-h-screen py-10 bg-gray-100 flex justify-between flex-wrap;
   }
   .detailsContainer {
-    @apply w-[75%];
+    @apply w-full md:w-[75%];
   }
   .details {
-    @apply pr-3 flex items-start justify-between border-r border-gray-400;
+    @apply pr-3 flex items-start justify-between md:border-r border-gray-400;
   }
   .details img {
-    @apply w-auto min-w-full max-h-[400px]  overflow-auto;
+    @apply w-full h-[280px] md:h-[350px]  overflow-auto;
   }
   .details .text {
     @apply w-[55%];
   }
   .sidebar {
-    @apply w-[22%];
+    @apply w-full md:w-[22%];
   }
 
   .reletedProductContainer{
@@ -152,11 +152,11 @@
 
   /*  user login form start */
   .UserLoginContainer {
-    @apply w-full bg-gray-100 min-h-[700px] p-5 border border-[color:var(--special-color)] flex items-center justify-center;
+    @apply w-full bg-gray-100 min-h-[700px] p-5 flex items-center justify-center;
   }
 
   .loginForm {
-    @apply w-full md:w-[100%] bg-gray-50 m-auto border border-[color:var(--special-color)] py-5 px-7;
+    @apply w-full md:w-[100%] bg-white m-auto border border-[color:var(--special-color)] py-5 px-7;
   }
 
   .formInput {
@@ -167,11 +167,11 @@
 
   /*  shipment start */
   .shipmentContainer {
-    @apply bg-gray-200 w-full min-h-screen py-10 px-5;
+    @apply bg-gray-100 w-full min-h-screen py-10 px-5;
   }
 
   .shipmentContainer form {
-    @apply w-full md:w-[70%] m-auto bg-gray-50 px-4 py-6 border border-[color:var(--special-color)];
+    @apply w-full md:w-[70%] m-auto bg-white px-4 py-6 border border-[color:var(--special-color)];
   }
 
   /*  shipment end */
@@ -282,11 +282,11 @@
 }
   /*  invoice / order sheet snd */
 
-  /*  sslider start */
+  /*  slider start */
   .sliderCard{
-    @apply flex items-center justify-start flex-wrap text-white pl-10 pr-4
+    @apply flex items-center justify-start flex-wrap text-white pl-2 md:pl-10 pr-4
   }
-  /*  sslider ens */
+  /*  sslider end */
 
 }
 

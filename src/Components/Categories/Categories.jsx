@@ -8,16 +8,28 @@ import watch from "../../images/categories/watch.jpg"
 import pant from "../../images/categories/pant.jpg"
 import cap from "../../images/categories/cap.jpg"
 import tShirt from "../../images/categories/t-shirt.jpg"
+import { motion } from "framer-motion"
+
 function Categories() {
     return (
-        <div className='categories_container'>
+        <div className='categories_container bg-gray-100 px-3 py-10 overflow-hidden'>
             <div className="row ">
                 <div className="col-md-5">
-                    <div className="categorie_img_container">
+                    <motion.div
+                        initial={{ x: -50 }}
+                        whileInView={{ x: 0 }}
+                        transition={{ duration: "1" }}
+                        viewport={{ once: true }}
+                        className="categorie_img_container">
                         <img className='w-100' src={categoriesImg} alt="" />
-                    </div>
+                    </motion.div>
                 </div>
-                <div className="col-md-7">
+                <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: "0.5" }}
+                    viewport={{ once: true }}
+                    className="col-md-7">
                     <div className="row">
                         <div className="col-4">
                             <div className="card">
@@ -116,7 +128,7 @@ function Categories() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     )

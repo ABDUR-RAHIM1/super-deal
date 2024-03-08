@@ -3,7 +3,7 @@ import AdminLayout from '../AdminLayout'
 import { MdFavoriteBorder, MdNotificationsActive } from 'react-icons/md'
 import { GiPayMoney, GiProgression, GiReceiveMoney, GiTakeMyMoney } from "react-icons/gi";
 import { FaRegUser, FaRegCheckCircle } from "react-icons/fa";
-
+import {motion} from "framer-motion"
  
 function DashboardContent() {
   const [orderList, setOrderList] = useState([])
@@ -59,7 +59,13 @@ function DashboardContent() {
   return (
     <AdminLayout>
       <h2 className='text-2xl italic my-3 border-b border-blue-300 capitalize'> <span className='text-blue-900 text-3xl'>Welocme</span> To your Dashboar , Super-deal</h2>
-      <div className='DashboardContainer'>
+      <motion.div
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: "0.2" }}
+        viewport={{ once: true }}
+    
+      className='DashboardContainer'>
         <div className="orderArea">
           <div className="orderCard">
             <h4>Totol Orders</h4>
@@ -137,7 +143,7 @@ function DashboardContent() {
           </div>
         </div>
 
-      </div>
+      </motion.div>
     </AdminLayout>
   )
 }

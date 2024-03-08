@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { CartContext } from "../../App";
 import dummyImg from "../../images/demo.png";
 import ProductList from "../ProductList/ProductList";
+import  {motion} from "framer-motion"
 
 function Details() {
   const state = useLocation().state;
@@ -19,7 +20,7 @@ function Details() {
   useEffect(() => {
     fetch("https://panda-backend.onrender.com/product/all")
       .then((res) => res.json())
-      .then((product) => { 
+      .then((product) => {
         const products = product.products;
 
         const relatedProducts = products.filter(
@@ -30,7 +31,12 @@ function Details() {
   }, []);
 
   return (
-    <div className="productDetails">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: "0.5" }} 
+
+      className="productDetails">
       <div className="detailsContainer">
         <div className="details">
           <div className="w-[40%]">
@@ -47,7 +53,7 @@ function Details() {
             </p>
             <hr className="my-2 text-gray-400" />
 
-            <h1 className="text-3xl my-3 text-red-500 uppercase font-normal">
+            <h1 className="text-2xl my-3 text-red-500 uppercase font-medium">
               Price : {price} BDT{" "}
             </h1>
 
@@ -55,9 +61,9 @@ function Details() {
 
             <button
               onClick={() => handleClick(state)}
-              className="button py-2 capitalize bg-red-500 my-3 text-white font-medium"
+              className="button py-2 capitalize text-sm bg-red-500 my-3 text-white font-medium"
             >
-              Add To Cart With Quantity
+              Add To Cart
             </button>
           </div>
         </div>
@@ -109,9 +115,9 @@ function Details() {
             14 days free & easy return Change of mind is not applicable
           </p>
         </div>
-        <img className="w-full h-44" src={image || dummyImg} alt="" />
+        <img className=" w-full sm:w-[60%] md:w-full m-auto md:h-44" src={image || dummyImg} alt="" />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
