@@ -18,29 +18,9 @@
     background-size: cover;
     object-fit: cover;
     background-position: top 0 right 20%;
-    background-repeat: no-repeat;
-    animation-name: slider;
-    animation-duration: 20s;
-    animation-timing-function: linear;
-    animation-direction: alternate; 
-    animation-iteration-count: infinite;
+    background-repeat: no-repeat; 
  }
-
- @keyframes slider {
-  0% {
-    background-image: url("../../images/banner-images/sl1.jpg");
-  }
-    55% {
-      background-image: url("../../images/banner-images/sl2.jpg");
-    }
-    75% {
-        background-image: url("../../images/banner-images/sl3.jpg");
-      }
-
-      100% {
-        background-image: url("../../images/banner-images/sl2.jpg");
-      }
-  }
+  
 
   @media screen and (max-width:768px) {
       .sliderCard{

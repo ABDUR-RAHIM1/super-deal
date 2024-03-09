@@ -1,14 +1,12 @@
 import { useContext, useEffect } from "react";
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
-import { useNavigate } from "react-router-dom";
-import { adminContext } from "../../App";
+import { useNavigate } from "react-router-dom"; 
 import { toast } from "react-toastify";
 
 function AdminLogin() {
   const nevigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
-  const [isAdminLogin, setIsAdminLogin] = useContext(adminContext);
+  const [isLoading, setIsLoading] = useState(false); 
   const [isAdmin, setIsAdmin] = useState({
     email: "",
     password: "",

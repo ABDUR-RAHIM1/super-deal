@@ -25,16 +25,16 @@ import ThanksMessage from './Components/ThanksMessage/ThanksMessage';
 
 export const CartContext = createContext();
 export const loginContext = createContext()
-export const adminContext = createContext()
+export const searchcContext = createContext()
 
 
 function App() {
     const [cart, setCart] = useState([])
     const [isLogin, setIsLogin] = useState(false)
-    const [isAdminLogin, setIsAdminLogin] = useState(false)
-
+    const [searchText, setSearchText] = useState("") 
+    
     return (
-        <adminContext.Provider value={[isAdminLogin, setIsAdminLogin]}>
+        <searchcContext.Provider value={[searchText, setSearchText]}>
             <loginContext.Provider value={[isLogin, setIsLogin]}>
                 <CartContext.Provider value={[cart, setCart]}>
                     <BrowserRouter>
@@ -72,7 +72,7 @@ function App() {
                     </BrowserRouter>
                 </CartContext.Provider>
             </loginContext.Provider>
-        </adminContext.Provider>
+        </searchcContext.Provider>
     )
 }
 

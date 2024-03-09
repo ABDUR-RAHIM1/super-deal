@@ -3,50 +3,58 @@ import { useState } from 'react';
 import { FaSearch, FaCartPlus } from "react-icons/fa";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import { IoClose } from "react-icons/io5";
-import { CartContext } from '../../App';
+import { CartContext, searchcContext } from '../../App';
 
 import { Link, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
 function Navbar() {
   const location = useLocation().pathname
   const [cart] = useContext(CartContext);
-
-  const [searchClick, setSeacrClick] = useState(false)
-  const [showBtn, setShowBtn] = useState(false)
+  const [searchClick, setSeacrClick] = useState(false) 
   const [menuClick, setMenuClick] = useState(false)
+ const [searchText, setSearchText]  = useContext(searchcContext)
 
   const handleSearchChange = (e) => {
     const value = e.target.value
+    setSearchText(value.toLowerCase())
 
-    if (value.length > 5) {
-      setShowBtn(true)
-    } else {
-      setShowBtn(false)
-    }
   }
 
 
   const isUserLogin = localStorage.getItem("userLogin");
 
-
+  const handleCartClick = () => {
+    if (cart.length <= 0) {
+      toast.error("Cart Is Empty - select Product")
+    } else {
+      toast.warning("Order Now")
+    }
+  }
 
 
   return (
     <>
       <header className='headerContainer'>
-        <div className="search_bar">
-          <span onClick={() => setSeacrClick(!searchClick)}>
-            <FaSearch />
-          </span>
-          {searchClick &&
-            <div className="searchInput">
-              <input onChange={handleSearchChange} type="search" placeholder='Search...' />
-              {showBtn &&
-                <button className='button bg-[color:var(--special-color)] text-black'>Search</button>}
-            </div>}
-        </div>
+        {
+          location ==="/products"
+            ?
+
+            <div className="search_bar">
+              <span onClick={() => setSeacrClick(!searchClick)}>
+                <FaSearch />
+              </span>
+              {searchClick &&
+                <div className="searchInput">
+                  <input onChange={handleSearchChange} type="search" placeholder='Search By Catagory...' />
+                 
+                </div>}
+            </div>
+
+            :
+            <h2 className='tetx-2xl md:text-3xl italic text-[color:var(--special-color)]'>𝓢𝓤𝓟𝓔𝓡 𝓓𝓔𝓐𝓛</h2>
+
+        }
         <nav className="navItems">
           <ul className={`${menuClick ? "right-0" : "-right-[600px]"}`}>
             <li className='md:hidden'>
@@ -55,7 +63,7 @@ function Navbar() {
             <li>
               <Link className='navItems' to="/products">Products</Link>
             </li>
-            <li><Link to={"/"}>men's</Link></li>
+            <li onClick={handleCartClick}><Link to={cart.length <= 0 ? '/products' : '/cart'}>Cart</Link></li>
             <li className='logo'><Link to={"/"}>super deal</Link></li>
             <li>
               <Link className='navItems' to="/shipment">Shipment</Link>
@@ -72,7 +80,7 @@ function Navbar() {
           </ul>
         </nav>
 
-        <Link onClick={()=>toast.error("Cart Is Empty")} className='cartItem' to={cart.length <= 0 ? '/products' : '/cart'}>
+        <Link onClick={handleCartClick} className='cartItem' to={cart.length <= 0 ? '/products' : '/cart'}>
           <div className="NavIcon">
             <FaCartPlus />
             <span>{cart.length}</span>

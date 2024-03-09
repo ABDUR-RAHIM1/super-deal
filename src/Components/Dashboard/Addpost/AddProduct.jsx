@@ -17,7 +17,8 @@ function AddProduct() {
   })
 
   const handleChange = (e) => {
-    setProduct({ ...product, [e.target.name]: e.target.value })
+    const text = (e.target.value).toLowerCase()
+    setProduct({ ...product, [e.target.name]: text })
   }
 
   // file upload handler 

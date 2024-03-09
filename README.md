@@ -19,12 +19,12 @@ modified UI =
 slider costomize -done
 15 / active navitems
 17 /  add framer motion - done
+13 / invoice print  -  done
 
 7 / password hasing
 12 /  edit /  products in dashboard
-13 / invoice print
 14 / seacring proucts with search bar
-
+15/ cart empty toast problem 
  
 
 
