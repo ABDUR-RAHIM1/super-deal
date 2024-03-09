@@ -1,20 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React  from 'react'
 import TrendingProducts from '../TrendingProducts/TrendingProducts'
 
 function Products() {
-  const buttons = [
-    "headphone", "smartphone", "laptop", "Power Bank"
-  ]
-
-
-  const [filterText, setFilterText] = useState("")
-  const handleClickBtn = (e) => {
-    const btnText = (e.target.innerText).toLowerCase();
-    setFilterText(btnText)
-  }
-
-
-
+  
+ 
   return (
     <div className='my-20 px-4'> 
         <div className='w-auto'>
@@ -25,7 +14,7 @@ function Products() {
           </div> 
       </div>
 
-      <TrendingProducts filterText={filterText} />
+      <TrendingProducts  />
     </div>
   )
 }

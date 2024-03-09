@@ -50,7 +50,7 @@
   }
 
   .addBanner {
-    @apply hidden px-5 md:flex items-center justify-between py-4 bg-gray-100 text-[#42a7ae];
+    @apply hidden px-5 md:flex items-center justify-between py-4 font-medium bg-gray-200 text-[#51b1b6];
   }
 
   /*  header snd here */

@@ -1,14 +1,11 @@
 import Form from "react-bootstrap/Form";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { loginContext } from "../../App";
+import { useNavigate } from "react-router-dom"; 
 import { toast } from "react-toastify";
 import { motion } from "framer-motion"
 
 function UsersLogin() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [isLogin, setIsLogin] = useContext(loginContext);
+  const [isLoading, setIsLoading] = useState(false); 
   const navigate = useNavigate();
   const [click, setClick] = useState(true);
 
@@ -54,10 +51,8 @@ function UsersLogin() {
       .then((res) => res.json())
       .then((data) => {
         setIsLoading(false);
-        toast(data.message);
-        setIsLogin(true);
-        if (data.message === "logged In successfully") {
-          console.log(data);
+        toast(data.message); 
+        if (data.message === "logged In successfully") { 
           localStorage.setItem("userLogin", JSON.stringify(true));
 
           setTimeout(() => {

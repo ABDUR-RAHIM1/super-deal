@@ -31,11 +31,10 @@ function ManageProducts() {
                 setIsDelete(!isDelete)
             })
     }
-
-    console.log(isLoading)
+ 
     return (
         <AdminLayout>
-            <h2 className='text-3xl text-center mb-4 uppercase'>All Products</h2>
+            <h2 className='text-3xl text-center mb-4 uppercase'>List Of Products</h2>
 
             <motion.div
                 initial={{ opacity: 0 }}

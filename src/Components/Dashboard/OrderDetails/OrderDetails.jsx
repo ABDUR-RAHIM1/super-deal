@@ -21,8 +21,7 @@ function OrderDetails() {
     // total price counter 
     let totalPrice = 0;
     if (findOrder) {
-        findOrder.order.forEach(element => {
-            console.log(element.price)
+        findOrder.order.forEach(element => { 
             totalPrice += element.price
         });
     }
@@ -135,7 +134,7 @@ function OrderDetails() {
                             <View>
                                 <Text style={styles.textHeader}>Invoice</Text>
                                 <Text style={styles.text}>Invoice No : {findOrder._id} </Text>
-                                <Text style={styles.text}>Date : {new Date(findOrder.orderDate).getDate()} - {new Date(findOrder.orderDate).getMonth() + 1} - {new Date(findOrder.orderDate).getFullYear()} </Text>
+                                <Text style={styles.text}>Date : {new Date(findOrder.orderDate).getDate()}/{new Date(findOrder.orderDate).getMonth() + 1}/{new Date(findOrder.orderDate).getFullYear()} </Text>
                             </View>
 
                             <View>

@@ -26,7 +26,7 @@ function Users() {
   return (
     <AdminLayout>
       <div className="text-center overflow-x-auto">
-        <h2 className='text-center text-2xl mb-5 text-gray-600 uppercase'>Users List</h2>
+        <h2 className='text-center text-2xl mb-5 text-gray-600 uppercase'>List Of Users</h2>
         {loading ? "Loading . . ."
           : <table className="table bg-gray-50"  >
             <thead className=" uppercase text-sm  font-normal">
@@ -41,7 +41,7 @@ function Users() {
               {user && user.slice().reverse().map((user) => (
 
                 <tr key={user._id}>
-                <td>{new Date(user.date).getDate()} - {new Date(user.date).getMonth() + 1} - {new Date(user.date).getFullYear()}</td>
+                <td>{new Date(user.date).getDate()}/{new Date(user.date).getMonth() + 1}/{new Date(user.date).getFullYear()}</td>
                   <td className="py-3">{user.username}</td>
                   <td>{user.email}</td>
                   <td>

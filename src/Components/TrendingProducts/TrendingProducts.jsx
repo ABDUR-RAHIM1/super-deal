@@ -10,8 +10,7 @@ function TrendingProducts() {
     useEffect(() => {
         fetch("https://panda-backend.onrender.com/product/all")
             .then(res => res.json())
-            .then(data => {
-                console.log(data);
+            .then(data => { 
                 const p = data.products.slice(-6);
                 setFilteredProducts(p);
 

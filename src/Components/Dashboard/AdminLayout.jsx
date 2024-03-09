@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaProductHunt } from "react-icons/fa";
 import { IoIosMan, IoIosAdd, IoMdLogOut } from "react-icons/io";
-import { MdFavoriteBorder, MdOutlineManageSearch, MdOutlineMenuOpen, MdClose } from "react-icons/md";
+import { MdFavoriteBorder, MdOutlineMenuOpen, MdClose } from "react-icons/md";
 
 
 function AdminLayout({ children }) {
@@ -30,10 +30,10 @@ function AdminLayout({ children }) {
           <li>  <Link to={"/admin-dashboard"}> <FaHome />  <span className={arrowClick ? "hidden" : ""}>Dashboard</span> </Link></li>
           <li>  <Link to={"/addproduct"}> <IoIosAdd /> <span className={arrowClick ? "hidden" : ""}> Add Product</span></Link></li>
           <li> <Link to={"/manage-users"}> <IoIosMan />  <span className={arrowClick ? "hidden" : ""}>Users</span> </Link></li>
-          <li>  <Link to={"/manage-products"}> <MdOutlineManageSearch /> <span className={arrowClick ? "hidden" : ""}>Manage Products</span> </Link></li>
+          <li>  <Link to={"/manage-products"}> <FaProductHunt /> <span className={arrowClick ? "hidden" : ""}>Manage Products</span> </Link></li>
           <li> <Link to={"/manage-orders"}> <MdFavoriteBorder />  <span className={arrowClick ? "hidden" : ""}>orders</span> </Link></li>
-          <li onClick={handleAdminLogin}>
-            <Link>
+          <li  onClick={handleAdminLogin}>
+            <Link >
               <IoMdLogOut />  <span className={arrowClick ? "hidden" : ""}>Log-out</span>
             </Link>
           </li>

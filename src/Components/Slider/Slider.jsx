@@ -5,10 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
-import { Link } from 'react-router-dom';
-import sl1 from "../../images/banner-images/sl1.jpg"
-import sl2 from "../../images/banner-images/sl2.jpg"
-import sl3 from "../../images/banner-images/sl3.jpg"
+import { Link } from 'react-router-dom'; 
 
 
 function Slider() {
@@ -17,17 +14,17 @@ function Slider() {
         {
             title: "Revolutionize Your Shopping Experience with E-Commerce!",
             text: "Dive into the world of online shopping and unlock convenience like never before. Browse through a vast array of products, compare prices, and make purchases from the comfort of your own home. With e-commerce, the entire marketplace is at your fingertips.",
-            img: sl1
+         
         },
         {
             title: "Discover Endless Possibilities with E-Commerce Innovation",
             text: "Experience the future of retail with cutting-edge e-commerce solutions. From personalized recommendations to seamless checkout experiences, explore how technology is transforming the way we shop. With e-commerce innovation, shopping has never been more exciting or accessible.",
-            img: sl2
+           
         },
         {
             title: "Elevate Your Business with E-Commerce Excellence",
             text: "Harness the power of e-commerce to expand your reach and drive growth for your business. With customizable storefronts, secure payment gateways, and powerful analytics, unlock the full potential of online commerce. Join the e-commerce revolution and take your business to new heights.",
-            img: sl3
+           
         }
     ];
 
@@ -41,7 +38,7 @@ function Slider() {
                         <SwiperSlide>
                             <div className='sliderCard'>
                                 <div className=' w-full md:w-[48%] px-3 md:px-5 '>
-                                    <h2 className='text-2xl md:text-3xl text-blue-500 italic font-medium my-3 capitalize'>{sd.title}</h2>
+                                    <h2 className='text-2xl md:text-3xl text-[color:var(--special-color)] italic font-medium my-3 capitalize'>{sd.title}</h2>
                                     <p className=' font-normal md:font-medium'>
                                         {sd.text}
                                     </p>

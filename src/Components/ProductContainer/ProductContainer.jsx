@@ -57,7 +57,7 @@ function ProductContainer() {
                 <button
                   onClick={handleFilterClick}
                   key={pd.categorie}
-                  className="button gradColor p-2 px-2"
+                  className="button text-sm gradColor p-2 px-2"
                 >
                   {pd.categorie}
                 </button>
@@ -69,7 +69,7 @@ function ProductContainer() {
 
       <div className="px-2 bg-gray-200 flex items-center justify-between flex-wrap py-10">
         {filterProduct.length < 1 ? <h2 className="text-blue-900 text-2xl font-medium capitalize"> <span className={`text-red-600 lowercase`}>{searchText}</span>  Product not found</h2>
-          : filterProduct.map((pd) => {
+          : filterProduct.slice().reverse().map((pd) => {
             return <ProductList key={pd._id} product={pd} />;
           })}
       </div>

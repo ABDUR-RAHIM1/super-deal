@@ -96,9 +96,7 @@ function Navbar() {
 
         </div>
       </header>
-
-      {
-        location === "/allProducts" &&
+ 
         <div className="addBanner">
           <h5>NO LIMITED</h5>
           <h5> Worldwide free shipping</h5>
@@ -106,8 +104,7 @@ function Navbar() {
           <h5> 7 days money back guaranteed</h5>
           <h5>SAFETY</h5>
           <h5> We never share your individual info</h5>
-        </div>
-      }
+        </div> 
     </>
   )
 }

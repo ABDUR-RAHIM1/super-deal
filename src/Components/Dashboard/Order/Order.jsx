@@ -22,8 +22,7 @@ function Order() {
             method: "DELETE",
         }).then(res => res.json())
             .then(data => toast(data.message))
-    }
-
+    } 
 
     return (
         <AdminLayout>
@@ -33,13 +32,15 @@ function Order() {
                           transition={{ duration: "2" }}
           
             className='oveflow-x-auto text-center'>
+                   <h2 className='text-center text-2xl mb-5 text-gray-600 uppercase'>List Of Orders</h2>
                 {
                     loading ? "Loading . . ." :
-
+                      
                         <table className='table bg-gray-50'>
                             <thead className='uppercase font-medium'>
                                 <tr>
-                                    <th>Order Id</th>
+                                    <th>SL</th>
+                                    <th>Order Date</th>
                                     <th>Costomar Name:</th>
                                     <th>Order Details</th>
                                     <th>Cancel Order</th>
@@ -47,15 +48,18 @@ function Order() {
                             </thead>
                             <tbody>
                                 {
-                                  order &&  order.slice().reverse().map(order => {
-                                        console.log(order)
+                                  order &&  order.slice().reverse().map((order , i) => {
+                                       
                                         return (
                                             <tr key={order._id}>
-                                                <td>{order._id}</td>
+                                                <td>{i+1}</td>
+                                                <td>
+                                                {new Date(order.orderDate).getDate()}/{new Date(order.orderDate).getMonth() + 1}/{new Date(order.orderDate).getFullYear()}
+                                                </td>
                                                 <td>{order.name}</td>
                                                 <td>
                                                     <Link state={order.order} to={`/orderDetails/${order._id}`}>
-                                                        <button className='btn btn-primary btn-sm'>Details</button>
+                                                        <button download className='btn btn-primary btn-sm'>Details</button>
                                                     </Link>
                                                 </td>
                                                 <td><button onClick={() => handleCancel(order._id)} className='btn btn-danger btn-sm'>Cancel </button></td>

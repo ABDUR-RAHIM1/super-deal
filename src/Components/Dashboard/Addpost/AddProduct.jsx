@@ -129,10 +129,10 @@ function AddProduct() {
               required
               className="formInput"
             />
-            <small className='my-2'>
+            <small className='my-2 text-red-500'>
               {imgLoading ? "Image Uplaoding ..." : <span className='text-gray-500'> Add Product Photo</span> }
             </small>
-            <button type='submit' className='button w-full py-2 my-3 font-medium flex items-center justify-center gap-2 text-black bg-[color:var(--special-color)] '> <AiOutlinePlus />
+            <button disabled={imgLoading} type='submit' className='button w-full py-2 my-3 font-medium flex items-center justify-center gap-2 text-black bg-[color:var(--special-color)] '> <AiOutlinePlus />
               {
                 isLoading ? "Adding . . ." : "Add Product"
               }
